@@ -15,9 +15,9 @@ export const TestimonialSection = () => {
       id: 1,
       name: "Alex Johnson",
       role: "Product Director at TechCorp",
-      content: `Working with Sahil was seamless from day one. Not only did they deliver a full-stack solution ahead of schedule, but they also communicated clearly throughout the project. It's rare to find a developer who understands both the tech and the business side so well`,
+      content: `Working with Omar was seamless from day one. Not only did they deliver a full-stack solution ahead of schedule, but they also communicated clearly throughout the project. It's rare to find a developer who understands both the tech and the business side so well`,
       rating: 5,
-      image: "/testimonials/alex-johnson.png"
+      image: "/testimonials/alex-johnson.png",
     },
     {
       id: 2,
@@ -25,7 +25,7 @@ export const TestimonialSection = () => {
       role: "Senior UX Designer at DesignHub",
       content: `I've reviewed hundreds of portfolios, and his work is truly exceptional. Tway the animations guide attention while maintaining performance is masterful. The gradient elements add depth without overwhelming.`,
       rating: 5,
-      image: "/testimonials/maria-chen.png"
+      image: "/testimonials/maria-chen.png",
     },
     {
       id: 3,
@@ -33,7 +33,7 @@ export const TestimonialSection = () => {
       role: "CTO at Startup Ventures",
       content: `From wireframes to deployment, Sahil owned the entire stack with confidence and creativity. The final product is fast, reliable, and looks incredible. I wouldn't hesitate to work with them again.`,
       rating: 5,
-      image: "/testimonials/David Wilson.png"
+      image: "/testimonials/David Wilson.png",
     },
   ];
 
@@ -80,9 +80,9 @@ export const TestimonialSection = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.3
-      }
-    }
+        delayChildren: 0.3,
+      },
+    },
   };
 
   const itemVariants = {
@@ -92,9 +92,9 @@ export const TestimonialSection = () => {
       opacity: 1,
       transition: {
         duration: 0.8,
-        ease: [0.16, 1, 0.3, 1]
-      }
-    }
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
   };
 
   return (
@@ -110,10 +110,10 @@ export const TestimonialSection = () => {
             key={i}
             className="absolute rounded-full bg-primary/10"
             style={{
-              width: Math.random() * 10 + 2 + 'px',
-              height: Math.random() * 10 + 2 + 'px',
-              left: Math.random() * 100 + '%',
-              top: Math.random() * 100 + '%',
+              width: Math.random() * 10 + 2 + "px",
+              height: Math.random() * 10 + 2 + "px",
+              left: Math.random() * 100 + "%",
+              top: Math.random() * 100 + "%",
             }}
             animate={{
               y: [0, (Math.random() - 0.5) * 100],
@@ -123,8 +123,8 @@ export const TestimonialSection = () => {
             transition={{
               duration: Math.random() * 10 + 10,
               repeat: Infinity,
-              repeatType: 'reverse',
-              ease: 'linear'
+              repeatType: "reverse",
+              ease: "linear",
             }}
           />
         ))}
@@ -190,7 +190,11 @@ export const TestimonialSection = () => {
                         {[...Array(5)].map((_, i) => (
                           <Star
                             key={i}
-                            className={`h-4 w-4 sm:h-5 sm:w-5 ${i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-muted-foreground/30'}`}
+                            className={`h-4 w-4 sm:h-5 sm:w-5 ${
+                              i < testimonial.rating
+                                ? "text-yellow-400 fill-yellow-400"
+                                : "text-muted-foreground/30"
+                            }`}
                           />
                         ))}
                       </div>
@@ -211,8 +215,12 @@ export const TestimonialSection = () => {
                           )}
                         </div>
                         <div>
-                          <p className="font-medium text-sm sm:text-base">{testimonial.name}</p>
-                          <p className="text-xs sm:text-sm text-muted-foreground">{testimonial.role}</p>
+                          <p className="font-medium text-sm sm:text-base">
+                            {testimonial.name}
+                          </p>
+                          <p className="text-xs sm:text-sm text-muted-foreground">
+                            {testimonial.role}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -259,7 +267,11 @@ export const TestimonialSection = () => {
                   <button
                     key={index}
                     onClick={() => setCurrentIndex(index)}
-                    className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all ${currentIndex === index ? 'bg-primary' : 'bg-muted-foreground/20'}`}
+                    className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all ${
+                      currentIndex === index
+                        ? "bg-primary"
+                        : "bg-muted-foreground/20"
+                    }`}
                     aria-label={`Go to testimonial ${index + 1}`}
                   />
                 ))}
@@ -293,8 +305,8 @@ export const TestimonialSection = () => {
           transition={{
             duration: 15,
             repeat: Infinity,
-            repeatType: 'reverse',
-            ease: 'easeInOut'
+            repeatType: "reverse",
+            ease: "easeInOut",
           }}
         />
         <motion.div
@@ -306,9 +318,9 @@ export const TestimonialSection = () => {
           transition={{
             duration: 20,
             repeat: Infinity,
-            repeatType: 'reverse',
-            ease: 'easeInOut',
-            delay: 5
+            repeatType: "reverse",
+            ease: "easeInOut",
+            delay: 5,
           }}
         />
       </motion.div>
