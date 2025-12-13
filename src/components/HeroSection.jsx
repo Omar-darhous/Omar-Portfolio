@@ -87,7 +87,7 @@ export const HeroSection = () => {
 
   const handleViewResume = () => {
     // Open resume in new tab
-    window.open("/Sahil-resume.pdf", "_blank", "noopener,noreferrer");
+    window.open("/Omar-resume.pdf", "_blank", "noopener,noreferrer");
   };
 
   return (
