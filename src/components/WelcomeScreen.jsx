@@ -28,7 +28,7 @@ const WelcomeScreen = ({ onWelcomeComplete }) => {
   };
 
   const currentColors = colors[theme] || colors.dark;
-  const portfolioUrl = "Omarfullstackportfolio.netlify.app";
+  const portfolioUrl = "Omarfullstackportfolio.vercel.app";
   const welcomeMessages = [
     "Crafting digital experiences",
     "Software Engineer",
