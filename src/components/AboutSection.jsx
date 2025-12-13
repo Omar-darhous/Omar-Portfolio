@@ -332,17 +332,6 @@ export const AboutSection = () => {
                     Start a Project
                   </div>
                 </a>
-
-                {/* Download Button */}
-                <button
-                  onClick={handleDownload}
-                  className="flex-1 block w-full p-3 sm:p-4 border border-border rounded-xl text-center font-semibold transition-all duration-300 hover:bg-accent hover:border-primary/30 hover:scale-105 hover:shadow-lg group"
-                >
-                  <div className="flex items-center justify-center gap-2 sm:gap-3">
-                    <Download className="h-4 sm:h-5 w-4 sm:w-5 group-hover:translate-y-0.5 transition-transform duration-300" />
-                    Download Resume
-                  </div>
-                </button>
               </div>
 
               {/* Social Links */}
