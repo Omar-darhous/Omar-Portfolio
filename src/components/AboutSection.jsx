@@ -113,7 +113,7 @@ export const AboutSection = () => {
   // Programmatic download function
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/Omar-resume.pdf"; // Must be in public folder
+    link.href = "Omar-resume.pdf"; // Must be in public folder
     link.download = "Omar-resume.pdf";
     document.body.appendChild(link);
     link.click();
