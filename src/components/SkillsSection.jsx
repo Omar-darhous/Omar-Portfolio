@@ -39,19 +39,19 @@ const skills = [
   { name: "Node.js", level: 90, category: "backend", icon: "nodejs" },
   { name: "Express", level: 85, category: "backend", icon: "express" },
   { name: "MongoDB", level: 90, category: "backend", icon: "mongodb" },
-  { name: "PostgreSQL", level: 65, category: "backend", icon: "postgresql" },
-  { name: "GraphQL", level: 60, category: "backend", icon: "graphql" },
+  //{ name: "PostgreSQL", level: 65, category: "backend", icon: "postgresql" },
+  //{ name: "GraphQL", level: 60, category: "backend", icon: "graphql" },
   { name: "Java", level: 60, category: "backend", icon: "java" },
 
   // Tools
   { name: "Git", level: 90, category: "tools", icon: "git" },
   { name: "GitHub", level: 90, category: "tools", icon: "github" },
-  { name: "Docker", level: 70, category: "tools", icon: "docker" },
+  //{ name: "Docker", level: 70, category: "tools", icon: "docker" },
   { name: "Firebase", level: 80, category: "tools", icon: "firebase" },
   { name: "VS Code", level: 95, category: "tools", icon: "vscode" },
-  { name: "Cleark", level: 90, category: "tools", icon: "cleark" },
-  { name: "SQL", level: 90, category: "tools", icon: "sql" },
-  { name: "MySQL", level: 90, category: "tools", icon: "mysql" },
+  //{ name: "Cleark", level: 90, category: "tools", icon: "cleark" },
+  //{ name: "SQL", level: 90, category: "tools", icon: "sql" },
+  //{ name: "MySQL", level: 90, category: "tools", icon: "mysql" },
 ];
 
 const categories = [
