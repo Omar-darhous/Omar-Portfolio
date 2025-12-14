@@ -90,7 +90,7 @@ export const AboutSection = () => {
     personal:
       "Passionate about creating digital solutions that make a difference. When I'm not coding, I'm exploring new technologies, contributing to open-source, and mentoring aspiring developers.",
     professional:
-      "With 1+ years in full-stack development, I've delivered 15+ successful projects using modern technologies. I specialize in scalable architecture and performance optimization.",
+      "With 1+ years in full-stack development, I've delivered 10+ successful projects using modern technologies. I specialize in scalable architecture and performance optimization.",
     approach:
       "I believe in clean code, thorough testing, and user-centered design. My process emphasizes collaboration, agile methodologies, and continuous improvement.",
   };
