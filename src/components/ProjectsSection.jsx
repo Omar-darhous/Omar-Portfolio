@@ -82,6 +82,20 @@ const projects = [
     highlights: [],
   },
   {
+    id: 4,
+    title: "E-commerce Application",
+    category: "Personal supplies store Application",
+    description:
+      "A modern e-commerce web app for shopping clothes, jewelry, and electronics with a smooth and user-friendly experience.",
+    image: "/projects/project7.png",
+    tags: ["React", "Javascript", "Node.js", "React Router"],
+    demoUrl: "https://omar-personal-supplies-store.vercel.app",
+    githubUrl: "https://github.com/Omar-darhous/E-commerce",
+    accentColor: "from-rose-500 to-pink-600",
+    status: "Live",
+    highlights: [],
+  },
+  {
     id: 2,
     title: "WorldWise App",
     category: "WorldWise App",
@@ -119,7 +133,7 @@ const projects = [
   },
   {
     id: 4,
-    title: "SRicepe-food Application",
+    title: "Ricepe-food Application",
     category: "Ricepe-food Application",
     description:
       "React Full Recipe App. This app allows you to discover a wide range of delicious recipes, including popular items, veggie picks, and various cuisine categories such as Italian, Chinese, Thai, and American. You can also use the search feature to find your favorite recipes quickly.",
@@ -129,7 +143,7 @@ const projects = [
     githubUrl: "https://github.com/Omar-darhous/ricepe-app",
     accentColor: "from-rose-500 to-pink-600",
     status: "Live",
-    highlights: ["Expense tracking", "Data visualization", "Budget planning"],
+    highlights: [],
   },
 ];
 
