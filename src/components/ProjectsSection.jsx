@@ -57,8 +57,7 @@ const projects = [
       "•	Developed MyMovie App Movie & TV Shows Web App, a responsive React & Vite frontend integrating TMDB API for real-time movie, TV show, and actor data, with Tailwind CSS, Zustand, React Router, and Chart.js for dynamic dashboards and interactive UI.",
     image: "/projects/project2.png",
     tags: ["React", "Node.js", "Vite", "Tailwind CSS", "Axios", "React Router"],
-    demoUrl:
-      "https://www.linkedin.com/posts/omar-darhous-0560b21a7_webdevelopment-reactjs-vite-activity-7405277156668436480-S03y?utm_source=share&utm_medium=member_desktop&rcm=ACoAADA--MIBzu1Z9RzHQiCsuTX0hp_3NyQWs9s",
+    demoUrl: "https://movies-cema.vercel.app",
     githubUrl: "https://github.com/Omar-darhous/movies-cema",
     featured: true,
     accentColor: "from-emerald-500 to-teal-600",
