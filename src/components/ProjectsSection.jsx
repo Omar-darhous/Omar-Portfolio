@@ -26,7 +26,7 @@ import {
 } from "framer-motion";
 
 const projects = [
-  {
+  /*{
     id: 8,
     title: "Hotel System",
     category: "Hotel Management System ",
@@ -48,7 +48,7 @@ const projects = [
     accentColor: "from-emerald-500 to-teal-600",
     status: "Live",
     highlights: [],
-  },
+  },*/
   {
     id: 7,
     title: "Movie & TV Shows App",
