@@ -26,12 +26,12 @@ import {
 } from "framer-motion";
 
 const projects = [
-  /*{
+  {
     id: 8,
-    title: "Hotel System",
-    category: "Hotel Management System ",
+    title: "Civilisation sprite platform",
+    category: "Civilisation sprite platform",
     description:
-      "•	A production-ready Hotel Management System built with React, Vite, and Supabase, featuring end-to-end booking workflows, cabin & guest management, real time data syncing, secure authentication, and a fully modular, scalable architecture. ",
+      "•	Developed a responsive tourism platform using React, Firebase Authentication, and REST API integration, implementing secure login, protected routing, dynamic content rendering, and scalable component-based architecture ready for production expansion. ",
     image: "/projects/project1.png",
 
     tags: [
@@ -42,13 +42,13 @@ const projects = [
       "REST API",
       "React-Query",
     ],
-    demoUrl: "https://the-wild-hotel-osis-2c83.vercel.app/",
-    githubUrl: "https://github.com/Omar-darhous/The-Wild-Hotel-Osis",
+    demoUrl: "https://civilisation-sprite.vercel.app",
+    githubUrl: "https://github.com/Omar-darhous/civilisation-sprite",
 
     accentColor: "from-emerald-500 to-teal-600",
     status: "Live",
     highlights: [],
-  },*/
+  },
   {
     id: 7,
     title: "Movie & TV Shows App",
