@@ -94,7 +94,7 @@ const projects = [
     status: "Live",
     highlights: [],
   },
-  {
+  /*{
     id: 2,
     title: "WorldWise App",
     category: "WorldWise App",
@@ -114,7 +114,7 @@ const projects = [
     accentColor: "from-blue-500 to-cyan-600",
     status: "Live",
     highlights: [],
-  },
+  },*/
   {
     id: 3,
     title: "Weather App",
