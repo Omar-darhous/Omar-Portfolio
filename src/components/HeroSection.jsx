@@ -43,7 +43,7 @@ export const HeroSection = () => {
 
   const achievements = [
     {
-      number: "1+",
+      number: "2+",
       label: "Years in Production",
       icon: <Shield className="h-3 w-3" />,
     },
@@ -323,21 +323,21 @@ export const HeroSection = () => {
                               line.includes("import")
                                 ? "text-purple-400 font-semibold"
                                 : line.includes("const") || line.includes("new")
-                                ? "text-blue-400 font-semibold"
-                                : line.includes("React") ||
-                                  line.includes("Node.js") ||
-                                  line.includes("TypeScript")
-                                ? "text-cyan-400"
-                                : line.includes("FullStackDeveloper")
-                                ? "text-emerald-400 font-semibold"
-                                : line.includes("//")
-                                ? "text-muted-foreground italic"
-                                : line.includes("await") ||
-                                  line.includes("connect")
-                                ? "text-yellow-400"
-                                : line.includes("'")
-                                ? "text-amber-400"
-                                : "text-foreground"
+                                  ? "text-blue-400 font-semibold"
+                                  : line.includes("React") ||
+                                      line.includes("Node.js") ||
+                                      line.includes("TypeScript")
+                                    ? "text-cyan-400"
+                                    : line.includes("FullStackDeveloper")
+                                      ? "text-emerald-400 font-semibold"
+                                      : line.includes("//")
+                                        ? "text-muted-foreground italic"
+                                        : line.includes("await") ||
+                                            line.includes("connect")
+                                          ? "text-yellow-400"
+                                          : line.includes("'")
+                                            ? "text-amber-400"
+                                            : "text-foreground"
                             }
                           `}
                         >

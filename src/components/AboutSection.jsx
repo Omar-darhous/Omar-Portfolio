@@ -27,7 +27,7 @@ export const AboutSection = () => {
       suffix: "",
     },
     {
-      number: "1",
+      number: "2",
       label: "Years Exp",
       icon: <Calendar className="h-5 w-5" />,
       suffix: "+",
@@ -105,7 +105,7 @@ export const AboutSection = () => {
   useEffect(() => {
     const interval = setInterval(
       () => setCounter((prev) => (prev + 1) % 4),
-      2000
+      2000,
     );
     return () => clearInterval(interval);
   }, []);
