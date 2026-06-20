@@ -83,7 +83,7 @@ const projects = [
   {
     id: 4,
     title: "E-commerce Application",
-    category: "Personal supplies store Application",
+    category: "Personal phone store Application",
     description:
       "•	Developed a responsive e-commerce platform for mobile phones and accessories using React.js, enabling users to browse products, view detailed specifications, and manage their shopping cart. Integrated RESTful APIs for product management, search, and filtering functionalities. Designed a user-friendly and mobile-responsive interface to provide a seamless shopping experience across devices.",
     image: "/projects/project7.png",
