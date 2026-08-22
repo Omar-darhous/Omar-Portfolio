@@ -31,7 +31,7 @@ const projects = [
     title: "Civilisation sprite platform",
     category: "Civilisation sprite platform",
     description:
-      "•	Developed a responsive tourism platform using React, Firebase Authentication, and REST API integration, implementing secure login, protected routing, dynamic content rendering, and scalable component-based architecture ready for production expansion. ",
+      "Developed a responsive tourism platform using React, Firebase Authentication, and REST API integration, implementing secure login, protected routing, dynamic content rendering, and scalable component-based architecture ready for production expansion. ",
     image: "/projects/project1.png",
 
     tags: [
@@ -46,6 +46,7 @@ const projects = [
     githubUrl: "https://github.com/Omar-darhous/civilisation-sprite",
 
     accentColor: "from-emerald-500 to-teal-600",
+    featured: true,
     status: "Live",
     highlights: [],
   },
@@ -54,7 +55,7 @@ const projects = [
     title: "Movie & TV Shows App",
     category: "MyMovie App ",
     description:
-      "•	Developed MyMovie App Movie & TV Shows Web App, a responsive React & Vite frontend integrating TMDB API for real-time movie, TV show, and actor data, with Tailwind CSS, Zustand, React Router, and Chart.js for dynamic dashboards and interactive UI.",
+      "Developed MyMovie App Movie & TV Shows Web App, a responsive React & Vite frontend integrating TMDB API for real-time movie, TV show, and actor data, with Tailwind CSS, Zustand, React Router, and Chart.js for dynamic dashboards and interactive UI.",
     image: "/projects/project2.png",
     tags: ["React", "Node.js", "Vite", "Tailwind CSS", "Axios", "React Router"],
     demoUrl: "https://movies-cema.vercel.app",
@@ -85,12 +86,13 @@ const projects = [
     title: "E-commerce Application",
     category: "Personal phone store Application",
     description:
-      "•	Developed a responsive e-commerce platform for mobile phones and accessories using React.js, enabling users to browse products, view detailed specifications, and manage their shopping cart. Integrated RESTful APIs for product management, search, and filtering functionalities. Designed a user-friendly and mobile-responsive interface to provide a seamless shopping experience across devices.",
+      "Developed a responsive e-commerce platform for mobile phones and accessories using React.js, enabling users to browse products, view detailed specifications, and manage their shopping cart. Integrated RESTful APIs for product management, search, and filtering functionalities. Designed a user-friendly and mobile-responsive interface to provide a seamless shopping experience across devices.",
     image: "/projects/project7.png",
     tags: ["React", "Javascript", "Node.js", "React Router"],
     demoUrl: "https://omar-e-commerce-phone.vercel.app/",
     githubUrl: "https://github.com/Omar-darhous/E-Commerce-phone",
     accentColor: "from-rose-500 to-pink-600",
+    featured: true,
     status: "Live",
     highlights: [],
   },
@@ -99,7 +101,7 @@ const projects = [
     title: "Task manager App",
     category: "Task manager App",
     description:
-      "•	Developed a responsive task management application using React.js, enabling users to create, update, organize, and track tasks efficiently. Implemented reusable components, state management, and form validation to enhance user experience. Integrated RESTful APIs for seamless data handling and real-time updates. Focused on clean UI design, performance optimization, and responsive layouts across different devices.",
+      "Developed a responsive task management application using React.js, enabling users to create, update, organize, and track tasks efficiently. Implemented reusable components, state management, and form validation to enhance user experience. Integrated RESTful APIs for seamless data handling and real-time updates. Focused on clean UI design, performance optimization, and responsive layouts across different devices.",
     image: "/projects/project4.png",
     tags: [
       "Vite",
@@ -110,6 +112,27 @@ const projects = [
     ],
     demoUrl: "https://omar-task-manager.vercel.app/",
     githubUrl: "https://github.com/Omar-darhous/Task-Manager",
+    featured: true,
+    accentColor: "from-blue-500 to-cyan-600",
+    status: "Live",
+    highlights: [],
+  },
+  {
+    id: 8,
+    title: "Task manager App",
+    category: "Task manager App",
+    description:
+      "Built a sports platform displaying live match schedules, real-time scores, and league standings for top-tier competitions (Top 5 European leagues, Egyptian, Saudi, and American leagues), with an integrated news feed",
+    image: "/projects/project8.png",
+    tags: [
+      "Vite",
+      "Component styles",
+      "React",
+      "Context API",
+      "URL positioning",
+    ],
+    demoUrl: "https://kora-score.vercel.app/",
+    githubUrl: "https://github.com/Omar-darhous/Kora-score",
     featured: true,
     accentColor: "from-blue-500 to-cyan-600",
     status: "Live",
@@ -127,6 +150,7 @@ const projects = [
     demoUrl: "https://weather-app-two-sigma-45.vercel.app/",
     githubUrl: "https://github.com/Omar-darhous/weatherapp",
     accentColor: "from-amber-500 to-orange-600",
+    featured: true,
     status: "Live",
     highlights: [],
   },
@@ -140,6 +164,7 @@ const projects = [
     tags: ["React", "Vite", "Node.js", "Firebase"],
     demoUrl: "https://omar-recipe-app.vercel.app",
     githubUrl: "https://github.com/Omar-darhous/omar-recipe-app.git",
+    featured: true,
     accentColor: "from-rose-500 to-pink-600",
     status: "Live",
     highlights: [],
