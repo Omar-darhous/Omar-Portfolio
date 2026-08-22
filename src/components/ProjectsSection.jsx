@@ -119,8 +119,8 @@ const projects = [
   },
   {
     id: 8,
-    title: "Task manager App",
-    category: "Task manager App",
+    title: "kora score App",
+    category: "kora score App",
     description:
       "Built a sports platform displaying live match schedules, real-time scores, and league standings for top-tier competitions (Top 5 European leagues, Egyptian, Saudi, and American leagues), with an integrated news feed",
     image: "/projects/project8.png",
