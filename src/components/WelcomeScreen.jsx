@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useTranslation } from "react-i18next";
 
 const WelcomeScreen = ({ onWelcomeComplete }) => {
+  const { t } = useTranslation();
   const [phase, setPhase] = useState(0);
   const [exitAnimation, setExitAnimation] = useState(false);
   const [typedText, setTypedText] = useState("");
@@ -29,11 +31,14 @@ const WelcomeScreen = ({ onWelcomeComplete }) => {
 
   const currentColors = colors[theme] || colors.dark;
   const portfolioUrl = "Omarfullstackportfolio.vercel.app";
-  const welcomeMessages = [
-    "Crafting digital experiences",
-    "Software Engineer",
-    "Full-stack development",
-  ];
+  const messagesData = t("welcome.messages", { returnObjects: true });
+  const welcomeMessages = Array.isArray(messagesData)
+    ? messagesData
+    : [
+        "Crafting digital experiences",
+        "Software Engineer",
+        "Full-stack development",
+      ];
 
   useEffect(() => {
     const phase1 = setTimeout(() => setPhase(1), 800);
@@ -200,15 +205,15 @@ const WelcomeScreen = ({ onWelcomeComplete }) => {
                 style={{ color: currentColors.primary }}
                 variants={contentVariants}
               >
-                <span className="inline-block">Hello</span>
+                <span className="inline-block">{t("welcome.hello")}</span>
                 <motion.span
-                  className="inline-block ml-2 sm:ml-3 relative"
+                  className="inline-block ml-2 sm:ml-3 rtl:ml-0 rtl:mr-2 rtl:sm:mr-3 relative"
                   style={{ color: currentColors.secondary }}
                   variants={contentVariants}
                 >
-                  There !
+                  {t("welcome.there")}
                   <motion.span
-                    className="absolute -bottom-1 sm:-bottom-2 left-0 h-0.5 sm:h-1 w-full"
+                    className="absolute -bottom-1 sm:-bottom-2 left-0 rtl:left-auto rtl:right-0 h-0.5 sm:h-1 w-full"
                     style={{ backgroundColor: currentColors.secondary }}
                     variants={underlineVariants}
                   />
@@ -224,6 +229,7 @@ const WelcomeScreen = ({ onWelcomeComplete }) => {
               >
                 <motion.div
                   className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg font-mono flex justify-center items-center"
+                  dir="ltr"
                   style={{ color: currentColors.link }}
                 >
                   {typedText}
@@ -243,7 +249,7 @@ const WelcomeScreen = ({ onWelcomeComplete }) => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1.5 }}
                 >
-                  (This is my portfolio website)
+                  {t("welcome.siteNote")}
                 </motion.p>
               </motion.div>
             )}
@@ -272,7 +278,7 @@ const WelcomeScreen = ({ onWelcomeComplete }) => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}
                 >
-                  Loading my best work for you...
+                  {t("welcome.loading")}
                 </motion.p>
               </motion.div>
             )}

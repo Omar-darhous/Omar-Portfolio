@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import {
   Home,
   User,
@@ -15,17 +16,19 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { LanguageSelector } from "./LanguageSelector";
 
 const navItems = [
-  { name: "Home", href: "#hero", icon: Home },
-  { name: "About", href: "#about", icon: User },
-  { name: "Skills", href: "#skills", icon: Code },
-  { name: "Projects", href: "#projects", icon: Briefcase },
-  { name: "Testimonials", href: "#testimonials", icon: MessageSquare },
-  { name: "Contact", href: "#contact", icon: Mail },
+  { key: "home", href: "#hero", icon: Home },
+  { key: "about", href: "#about", icon: User },
+  { key: "skills", href: "#skills", icon: Code },
+  { key: "projects", href: "#projects", icon: Briefcase },
+  { key: "testimonials", href: "#testimonials", icon: MessageSquare },
+  { key: "contact", href: "#contact", icon: Mail },
 ];
 
 const ThemeToggle = () => {
+  const { t } = useTranslation();
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
@@ -47,8 +50,8 @@ const ThemeToggle = () => {
     <button
       onClick={toggleTheme}
       className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800"
-      title="Toggle theme"
-      aria-label="Toggle theme"
+      title={t("nav.toggleTheme")}
+      aria-label={t("nav.toggleTheme")}
     >
       {theme === "dark" ? (
         <Sun className="w-5 h-5" />
@@ -60,6 +63,7 @@ const ThemeToggle = () => {
 };
 
 export const Navbar = () => {
+  const { t } = useTranslation();
   const [activeSection, setActiveSection] = useState("#hero");
   const [showNavbar, setShowNavbar] = useState(true);
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
@@ -140,14 +144,15 @@ export const Navbar = () => {
 
   return (
     <>
-      {/* Top Right Buttons */}
+      {/* Top Action Bar (end-aligned for natural LTR & RTL placement) */}
       <motion.div
-        className="fixed top-4 right-4 z-50 flex gap-2"
+        className="fixed top-4 end-4 z-50 flex items-center gap-2"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
       >
-        {/* Website Globe Button */}
+        {/* Language Selector */}
+        <LanguageSelector />
 
         {/* GitHub Button */}
         <motion.a
@@ -162,8 +167,8 @@ export const Navbar = () => {
           )}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          title="GitHub Profile"
-          aria-label="GitHub Profile"
+          title={t("nav.githubProfile")}
+          aria-label={t("nav.githubProfile")}
         >
           <Github className="w-5 h-5" />
         </motion.a>
@@ -181,8 +186,8 @@ export const Navbar = () => {
           )}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          title="LinkedIn Profile"
-          aria-label="LinkedIn Profile"
+          title={t("nav.linkedinProfile")}
+          aria-label={t("nav.linkedinProfile")}
         >
           <Linkedin className="w-5 h-5" />
         </motion.a>
@@ -203,16 +208,16 @@ export const Navbar = () => {
           title={
             isAudioReady
               ? isMusicPlaying
-                ? "Pause music"
-                : "Play music"
-              : "Loading music..."
+                ? t("nav.pauseMusic")
+                : t("nav.playMusic")
+              : t("nav.loadingMusic")
           }
           aria-label={
             isAudioReady
               ? isMusicPlaying
-                ? "Pause music"
-                : "Play music"
-              : "Loading music"
+                ? t("nav.pauseMusic")
+                : t("nav.playMusic")
+              : t("nav.loadingMusic")
           }
         >
           {isMusicPlaying ? (
@@ -236,10 +241,10 @@ export const Navbar = () => {
         transition={{ duration: 0.3 }}
       >
         <div className="flex items-center justify-center bg-white/80 dark:bg-black/80 backdrop-blur-md rounded-full shadow-lg p-2 border border-gray-200 dark:border-gray-700">
-          <div className="flex space-x-1 items-center">
+          <div className="flex gap-1 items-center">
             {navItems.map((item) => (
               <a
-                key={item.name}
+                key={item.key}
                 href={item.href}
                 className={cn(
                   "p-2 rounded-full transition-colors flex flex-col items-center",
@@ -247,11 +252,11 @@ export const Navbar = () => {
                     ? "bg-primary text-white"
                     : "text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary"
                 )}
-                aria-label={item.name}
+                aria-label={t(`nav.${item.key}`)}
               >
                 <item.icon className="w-5 h-5" />
                 <span className="text-xs mt-1 hidden md:block">
-                  {item.name}
+                  {t(`nav.${item.key}`)}
                 </span>
               </a>
             ))}

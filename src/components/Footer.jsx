@@ -1,16 +1,16 @@
 import {
   ArrowUp,
   Linkedin,
-  Instagram,
-  Youtube,
   Github,
   Mail,
   Phone,
-  MapPin,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export const Footer = () => {
+  const { t, i18n } = useTranslation();
+  const isRtl = i18n.dir() === "rtl";
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
@@ -27,10 +27,10 @@ export const Footer = () => {
   ];
 
   const quickLinks = [
-    { name: "Home", href: "#hero" },
-    { name: "About", href: "#about" },
-    { name: "Work", href: "#work" },
-    { name: "Contact", href: "#contact" },
+    { name: t("nav.home"), href: "#hero" },
+    { name: t("nav.about"), href: "#about" },
+    { name: t("nav.projects"), href: "#work" },
+    { name: t("nav.contact"), href: "#contact" },
   ];
 
   const contactInfo = [
@@ -43,6 +43,7 @@ export const Footer = () => {
       icon: <Phone size={16} />,
       text: "+20 1032960398",
       href: "tel:+20132960398",
+      isPhone: true,
     },
   ];
 
@@ -86,9 +87,9 @@ export const Footer = () => {
                 OMAR
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
-                Developer creating meaningful experiences.
+                {t("footer.tagline")}
               </p>
-              <div className="flex space-x-4">
+              <div className="flex gap-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={index}
@@ -109,13 +110,13 @@ export const Footer = () => {
             {/* Navigation */}
             <motion.div variants={itemVariants}>
               <h4 className="text-gray-900 dark:text-white font-medium mb-4 text-sm uppercase tracking-wider">
-                Navigation
+                {t("footer.navigation")}
               </h4>
               <ul className="space-y-3">
                 {quickLinks.map((link, index) => (
                   <motion.li
                     key={index}
-                    whileHover={{ x: 2 }}
+                    whileHover={{ x: isRtl ? -2 : 2 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     <a
@@ -132,13 +133,13 @@ export const Footer = () => {
             {/* Contact */}
             <motion.div variants={itemVariants}>
               <h4 className="text-gray-900 dark:text-white font-medium mb-4 text-sm uppercase tracking-wider">
-                Contact
+                {t("footer.contact")}
               </h4>
               <ul className="space-y-3">
                 {contactInfo.map((info, index) => (
                   <motion.li
                     key={index}
-                    className="flex items-start space-x-3 text-sm"
+                    className="flex items-start gap-3 text-sm"
                     whileHover={{ scale: 1.02 }}
                   >
                     <span className="text-gray-600 dark:text-gray-400 mt-0.5">
@@ -147,12 +148,16 @@ export const Footer = () => {
                     {info.href ? (
                       <a
                         href={info.href}
+                        dir={info.isPhone ? "ltr" : undefined}
                         className="hover:text-gray-900 dark:hover:text-white transition-colors duration-300 text-gray-600 dark:text-gray-300"
                       >
                         {info.text}
                       </a>
                     ) : (
-                      <span className="text-gray-600 dark:text-gray-300">
+                      <span
+                        dir={info.isPhone ? "ltr" : undefined}
+                        className="text-gray-600 dark:text-gray-300"
+                      >
                         {info.text}
                       </span>
                     )}
@@ -164,15 +169,15 @@ export const Footer = () => {
             {/* Newsletter */}
             <motion.div variants={itemVariants} className="space-y-4">
               <h4 className="text-gray-900 dark:text-white font-medium text-sm uppercase tracking-wider">
-                Newsletter
+                {t("footer.newsletter")}
               </h4>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
-                Subscribe to get updates on my latest work.
+                {t("footer.newsletterDesc")}
               </p>
-              <form className="space-y-3">
+              <form className="space-y-3" onSubmit={(e) => e.preventDefault()}>
                 <input
                   type="email"
-                  placeholder="Your email"
+                  placeholder={t("footer.emailPlaceholder")}
                   className="px-3 py-2 text-sm border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 dark:bg-gray-800/50 rounded-md focus:outline-none focus:ring-1 focus:ring-gray-900 dark:focus:ring-gray-300 focus:border-gray-900 dark:focus:border-gray-300 w-full"
                   required
                 />
@@ -180,7 +185,7 @@ export const Footer = () => {
                   type="submit"
                   className="bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-200 dark:text-gray-900 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-300 w-full"
                 >
-                  Subscribe
+                  {t("footer.subscribe")}
                 </button>
               </form>
             </motion.div>
@@ -195,31 +200,31 @@ export const Footer = () => {
             viewport={{ once: true }}
           >
             <div>
-              <p>© {currentYear} Omar. All rights reserved.</p>
+              <p>{t("footer.copyright", { year: currentYear })}</p>
             </div>
 
-            <div className="flex items-center space-x-6">
+            <div className="flex items-center gap-6">
               <a
                 href="#"
                 className="hover:text-gray-900 dark:hover:text-white transition-colors"
               >
-                Privacy
+                {t("footer.privacy")}
               </a>
               <a
                 href="#"
                 className="hover:text-gray-900 dark:hover:text-white transition-colors"
               >
-                Terms
+                {t("footer.terms")}
               </a>
               <a
                 href="#"
                 className="hover:text-gray-900 dark:hover:text-white transition-colors"
               >
-                Cookies
+                {t("footer.cookies")}
               </a>
               <motion.a
                 href="#hero"
-                aria-label="Back to top"
+                aria-label={t("footer.backToTop")}
                 className="p-2 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-300"
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.95 }}

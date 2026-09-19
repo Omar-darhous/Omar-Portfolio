@@ -16,9 +16,11 @@ import {
   Mail,
 } from "lucide-react";
 import { motion, useInView } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { useRef, useState, useEffect } from "react";
 
 export const HeroSection = () => {
+  const { t } = useTranslation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const [currentCodeLine, setCurrentCodeLine] = useState(0);
@@ -44,22 +46,22 @@ export const HeroSection = () => {
   const achievements = [
     {
       number: "2+",
-      label: "Years in Production",
+      label: t("hero.yearsInProduction"),
       icon: <Shield className="h-3 w-3" />,
     },
     {
       number: "10+",
-      label: "Projects Delivered",
+      label: t("hero.projectsDelivered"),
       icon: <TrendingUp className="h-3 w-3" />,
     },
     {
       number: "100%",
-      label: "Client Satisfaction",
+      label: t("hero.clientSatisfaction"),
       icon: <Award className="h-3 w-3" />,
     },
     {
       number: "10+",
-      label: "Projects completed",
+      label: t("hero.projectsCompleted"),
       icon: <Zap className="h-3 w-3" />,
     },
   ];
@@ -151,7 +153,7 @@ export const HeroSection = () => {
             },
           }}
         >
-          <div className="flex-1 text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
+          <div className="flex-1 text-center lg:text-left rtl:lg:text-right max-w-2xl mx-auto lg:mx-0">
             <motion.div
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-8 backdrop-blur-sm"
               variants={{
@@ -159,8 +161,7 @@ export const HeroSection = () => {
                 visible: { y: 0, opacity: 1, transition: { duration: 0.8 } },
               }}
             >
-              <Briefcase className="h-4 w-4" /> Currently Accepting new
-              Opportunities
+              <Briefcase className="h-4 w-4 shrink-0" /> {t("hero.status")}
             </motion.div>
 
             <motion.h1
@@ -170,14 +171,14 @@ export const HeroSection = () => {
                 visible: { y: 0, opacity: 1, transition: { duration: 0.8 } },
               }}
             >
-              <span className="block text-foreground">I'm Omar</span>
+              <span className="block text-foreground">{t("hero.greeting")}</span>
               <motion.span
                 className="block bg-gradient-to-r from-primary via-purple-600 to-pink-600 bg-clip-text text-transparent mt-2"
                 animate={{ backgroundPosition: ["0%", "100%", "0%"] }}
                 transition={{ duration: 8, repeat: Infinity }}
                 style={{ backgroundSize: "200% 100%" }}
               >
-                Full-Stack Engineer
+                {t("hero.role")}
               </motion.span>
             </motion.h1>
 
@@ -188,12 +189,11 @@ export const HeroSection = () => {
                 visible: { y: 0, opacity: 1, transition: { duration: 0.8 } },
               }}
             >
-              I build{" "}
+              {t("hero.descriptionPart1")}{" "}
               <span className="text-primary font-semibold">
-                high-performance web applications
+                {t("hero.descriptionHighlight")}
               </span>{" "}
-              that drive business growth. Specializing in React, Node.js, and
-              scalable architecture for startups and enterprises.
+              {t("hero.descriptionPart2")}
             </motion.p>
 
             <motion.div
@@ -222,7 +222,7 @@ export const HeroSection = () => {
             </motion.div>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start rtl:lg:justify-start"
               variants={{
                 hidden: { y: 30, opacity: 0 },
                 visible: { y: 0, opacity: 1, transition: { duration: 0.8 } },
@@ -235,8 +235,8 @@ export const HeroSection = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <Code className="h-5 w-5" />
-                <span>View Case Studies</span>
-                <TrendingUp className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                <span>{t("hero.viewCaseStudies")}</span>
+                <TrendingUp className="h-4 w-4 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:scale-x-[-1] transition-transform" />
               </motion.a>
 
               <motion.a
@@ -246,7 +246,7 @@ export const HeroSection = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <Mail className="h-4 w-4" />
-                <span>Technical Interview</span>
+                <span>{t("hero.technicalInterview")}</span>
               </motion.a>
 
               <motion.button
@@ -256,12 +256,12 @@ export const HeroSection = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <Download className="h-4 w-4" />
-                <span>View Resume</span>
+                <span>{t("hero.viewResume")}</span>
               </motion.button>
             </motion.div>
 
             <motion.div
-              className="mt-6 text-center lg:text-left"
+              className="mt-6 text-center lg:text-left rtl:lg:text-right"
               variants={{
                 hidden: { y: 30, opacity: 0 },
                 visible: { y: 0, opacity: 1, transition: { duration: 0.8 } },
@@ -270,9 +270,9 @@ export const HeroSection = () => {
               <div className="text-sm text-muted-foreground">
                 🚀{" "}
                 <span className="text-primary font-semibold">
-                  Available Immediately
+                  {t("hero.availableImmediately")}
                 </span>{" "}
-                for Full-Stack and Frontend roles
+                {t("hero.availableForRoles")}
               </div>
             </motion.div>
           </div>
@@ -376,14 +376,14 @@ export const HeroSection = () => {
                 </motion.div>
 
                 <motion.div
-                  className="absolute -top-3 -left-3 bg-background/90 backdrop-blur-sm px-4 py-2 rounded-xl border border-border shadow-lg flex items-center gap-2"
+                  className="absolute -top-3 -left-3 rtl:-left-auto rtl:-right-3 bg-background/90 backdrop-blur-sm px-4 py-2 rounded-xl border border-border shadow-lg flex items-center gap-2"
                   initial={{ scale: 0, rotate: -180 }}
                   animate={{ scale: 1, rotate: 0 }}
                   transition={{ delay: 1.5, type: "spring" }}
                 >
                   <Award className="h-4 w-4 text-amber-500" />
                   <span className="text-sm font-semibold text-foreground">
-                    Solutions
+                    {t("hero.solutionsBadge")}
                   </span>
                 </motion.div>
 
@@ -394,10 +394,10 @@ export const HeroSection = () => {
                   transition={{ delay: 2, type: "spring" }}
                 >
                   <div className="text-xs font-mono text-muted-foreground">
-                    Built with
+                    {t("hero.builtWith")}
                   </div>
                   <div className="text-sm font-bold text-foreground">
-                    Modern Tech
+                    {t("hero.modernTech")}
                   </div>
                 </motion.div>
               </motion.div>
@@ -417,7 +417,7 @@ export const HeroSection = () => {
           whileHover={{ scale: 1.05 }}
         >
           <MousePointerClick className="h-3 w-3" />
-          <span>Explore Technical Portfolio</span>
+          <span>{t("hero.explorePortfolio")}</span>
         </motion.div>
         <motion.div
           animate={{ y: [0, 4, 0] }}

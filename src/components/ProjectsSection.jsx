@@ -2,6 +2,7 @@ import {
   ArrowRight,
   ExternalLink,
   Github,
+  Linkedin,
   ChevronUp,
   Star,
   Code,
@@ -18,6 +19,7 @@ import {
   X,
 } from "lucide-react";
 import { useState, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import {
   motion,
   useScroll,
@@ -28,6 +30,7 @@ import {
 const projects = [
   {
     id: 8,
+    key: "civilisation",
     title: "Civilisation sprite platform",
     category: "Civilisation sprite platform",
     description:
@@ -52,8 +55,9 @@ const projects = [
   },
   {
     id: 7,
+    key: "movies",
     title: "Movie & TV Shows App",
-    category: "MyMovie App ",
+    category: "MyMovie App",
     description:
       "Developed MyMovie App Movie & TV Shows Web App, a responsive React & Vite frontend integrating TMDB API for real-time movie, TV show, and actor data, with Tailwind CSS, Zustand, React Router, and Chart.js for dynamic dashboards and interactive UI.",
     image: "/projects/project2.png",
@@ -67,6 +71,7 @@ const projects = [
   },
   {
     id: 1,
+    key: "pizza",
     title: "Fast Pizza App",
     category: "Fast Pizza App",
     description:
@@ -82,7 +87,38 @@ const projects = [
     highlights: [],
   },
   {
+    id: 9,
+    key: "gohary",
+    title: "gohary phone",
+    category: "gohary phone",
+    description:
+      "Developed a full-stack mobile store management system for gohary phone, designed to manage products, inventory, sales, purchases, employees, expenses, maintenance, Vodafone Cash transactions, and business reporting. The system is currently being used by the store for day-to-day operations.",
+    image: "/projects/jawhary-phone.jpg",
+    tags: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT",
+      "Zod",
+      "REST API",
+      "Swagger",
+      "Tailwind CSS",
+    ],
+    demoUrl: null,
+    liveDemo: null,
+    githubUrl: null,
+    github: null,
+    linkedinUrl: "https://lnkd.in/p/eheP3qpU",
+    linkedin: "https://lnkd.in/p/eheP3qpU",
+    accentColor: "from-blue-500 to-indigo-600",
+    featured: true,
+    status: "Currently in Use",
+    highlights: [],
+  },
+  {
     id: 4,
+    key: "ecommerce",
     title: "E-commerce Application",
     category: "Personal phone store Application",
     description:
@@ -98,6 +134,7 @@ const projects = [
   },
   {
     id: 2,
+    key: "task",
     title: "Task manager App",
     category: "Task manager App",
     description:
@@ -119,6 +156,7 @@ const projects = [
   },
   {
     id: 8,
+    key: "kora",
     title: "kora score App",
     category: "kora score App",
     description:
@@ -140,6 +178,7 @@ const projects = [
   },
   {
     id: 3,
+    key: "weather",
     title: "Weather App",
     category: "Weather App",
     description:
@@ -156,6 +195,7 @@ const projects = [
   },
   {
     id: 4,
+    key: "recipe",
     title: "Ricepe-food Application",
     category: "Ricepe-food Application",
     description:
@@ -185,9 +225,14 @@ const categoryColors = {
     "from-violet-500/20 to-purple-600/20 text-violet-600 border-violet-500/30",
   "HR Tech":
     "from-orange-500/20 to-red-600/20 text-orange-600 border-orange-500/30",
+  "Personal phone store Application":
+    "from-cyan-500/20 to-blue-600/20 text-cyan-600 border-cyan-500/30",
+  "gohary phone":
+    "from-blue-500/20 to-indigo-600/20 text-blue-600 border-blue-500/30",
 };
 
 export const ProjectsSection = () => {
+  const { t } = useTranslation();
   const [showAll, setShowAll] = useState(false);
   const [activeFilter, setActiveFilter] = useState("All");
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
@@ -195,6 +240,18 @@ export const ProjectsSection = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const videoRef = useRef(null);
   const sectionRef = useRef(null);
+
+  const getProjectTitle = (project) =>
+    project?.key ? t(`projects.items.${project.key}.title`, { defaultValue: project.title }) : project?.title;
+
+  const getProjectCategory = (project) =>
+    project?.key ? t(`projects.items.${project.key}.category`, { defaultValue: project.category }) : project?.category;
+
+  const getProjectDescription = (project) =>
+    project?.key ? t(`projects.items.${project.key}.description`, { defaultValue: project.description }) : project?.description;
+
+  const getProjectStatus = (project) =>
+    project?.key ? t(`projects.items.${project.key}.status`, { defaultValue: project.status }) : project?.status;
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -275,7 +332,7 @@ export const ProjectsSection = () => {
             viewport={{ once: true }}
           >
             <Sparkles className="h-4 w-4" />
-            My Projects
+            {t("projects.badge")}
           </motion.div>
 
           <motion.h2
@@ -285,8 +342,8 @@ export const ProjectsSection = () => {
             transition={{ duration: 0.8, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            Project
-            <span className="block text-primary">Portfolio</span>
+            {t("projects.titlePart1")}
+            <span className="block text-primary">{t("projects.titlePart2")}</span>
           </motion.h2>
 
           <motion.p
@@ -296,8 +353,7 @@ export const ProjectsSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            A collection of projects I've built to showcase my skills in
-            full-stack development and modern web technologies.
+            {t("projects.subtitle")}
           </motion.p>
         </motion.div>
 
@@ -322,7 +378,7 @@ export const ProjectsSection = () => {
                     : "bg-background text-muted-foreground border-border hover:border-primary hover:text-primary"
                 }`}
               >
-                {category}
+                {category === "All" ? t("projects.filterAll") : category}
               </motion.button>
             ))}
           </div>
@@ -348,37 +404,39 @@ export const ProjectsSection = () => {
                 onMouseEnter={() => setHoveredProject(project.id)}
                 onMouseLeave={() => setHoveredProject(null)}
               >
-                <div className="relative bg-background border border-border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 h-full flex flex-col">
+                <div className="relative bg-background border border-border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 h-full flex flex-col text-start">
                   {/* Image/Video Section */}
                   <div className="relative h-48 overflow-hidden">
                     <motion.img
                       src={project.image}
-                      alt={project.title}
+                      alt={getProjectTitle(project)}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
                     />
 
                     {/* Status Badge */}
-                    <div className="absolute top-3 right-3">
+                    <div className="absolute top-3 end-3">
                       <div
                         className={`px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm ${
                           project.status === "Live"
                             ? "bg-emerald-500/20 text-emerald-600 border border-emerald-500/30"
+                            : project.status === "Currently in Use"
+                            ? "bg-blue-500/20 text-blue-600 dark:text-blue-400 border border-blue-500/30"
                             : "bg-amber-500/20 text-amber-600 border border-amber-500/30"
                         }`}
                       >
-                        {project.status}
+                        {getProjectStatus(project)}
                       </div>
                     </div>
 
                     {/* Category Badge */}
-                    <div className="absolute top-3 left-3">
+                    <div className="absolute top-3 start-3">
                       <span
                         className={`px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm border ${
-                          categoryColors[project.category]
+                          categoryColors[project.category] || "from-primary/20 to-primary/10 text-primary border-primary/30"
                         }`}
                       >
-                        {project.category}
+                        {getProjectCategory(project)}
                       </span>
                     </div>
 
@@ -390,26 +448,42 @@ export const ProjectsSection = () => {
                         opacity: hoveredProject === project.id ? 1 : 0,
                       }}
                     >
-                      {/* Video Play Button */}
-
                       {/* Code Button */}
-                      <motion.a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        className={`p-3 rounded-full backdrop-blur-sm border transition-all duration-300 ${
-                          project.githubUrl === "#"
-                            ? "bg-gray-500/50 text-gray-300 border-gray-500/30 cursor-not-allowed"
-                            : "bg-white/20 text-white border-white/30 hover:bg-white/30"
-                        }`}
-                        onClick={(e) =>
-                          project.githubUrl === "#" && e.preventDefault()
-                        }
-                      >
-                        <Code size={20} />
-                      </motion.a>
+                      {(project.githubUrl || project.github) && (
+                        <motion.a
+                          href={project.githubUrl || project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          aria-label={t("projects.code")}
+                          className={`p-3 rounded-full backdrop-blur-sm border transition-all duration-300 ${
+                            (project.githubUrl || project.github) === "#"
+                              ? "bg-gray-500/50 text-gray-300 border-gray-500/30 cursor-not-allowed"
+                              : "bg-white/20 text-white border-white/30 hover:bg-white/30"
+                          }`}
+                          onClick={(e) =>
+                            (project.githubUrl || project.github) === "#" && e.preventDefault()
+                          }
+                        >
+                          <Code size={20} />
+                        </motion.a>
+                      )}
+
+                      {/* LinkedIn Button */}
+                      {(project.linkedinUrl || project.linkedin) && (
+                        <motion.a
+                          href={project.linkedinUrl || project.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          aria-label={t("projects.viewLinkedIn", { defaultValue: "LinkedIn" })}
+                          className="p-3 rounded-full backdrop-blur-sm border transition-all duration-300 bg-white/20 text-white border-white/30 hover:bg-white/30"
+                        >
+                          <Linkedin size={20} />
+                        </motion.a>
+                      )}
                     </motion.div>
                   </div>
 
@@ -417,23 +491,23 @@ export const ProjectsSection = () => {
                   <div className="p-6 flex-1 flex flex-col">
                     <div className="flex items-start justify-between mb-3">
                       <h3 className="text-xl font-bold text-foreground">
-                        {project.title}
+                        {getProjectTitle(project)}
                       </h3>
                       {project.featured && (
                         <motion.div
-                          className="flex items-center gap-1 px-2 py-1 rounded-full bg-amber-500/20 text-amber-600 text-xs font-medium border border-amber-500/30"
+                          className="flex items-center gap-1 px-2 py-1 rounded-full bg-amber-500/20 text-amber-600 text-xs font-medium border border-amber-500/30 shrink-0"
                           initial={{ scale: 0 }}
                           animate={{ scale: 1 }}
                           transition={{ delay: index * 0.1 + 0.3 }}
                         >
                           <Star size={12} className="fill-amber-500" />
-                          Featured
+                          {t("projects.featured")}
                         </motion.div>
                       )}
                     </div>
 
                     <p className="text-muted-foreground text-sm mb-4 leading-relaxed flex-1">
-                      {project.description}
+                      {getProjectDescription(project)}
                     </p>
 
                     {/* Key Features */}
@@ -460,43 +534,61 @@ export const ProjectsSection = () => {
 
                     {/* Action Buttons */}
                     <div className="flex gap-3 pt-4 border-t border-border">
-                      <motion.a
-                        href={project.demoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                        className={`flex-1 inline-flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ${
-                          project.demoUrl === "#"
-                            ? "bg-muted text-muted-foreground cursor-not-allowed border border-border"
-                            : "bg-primary text-primary-foreground hover:bg-primary/90"
-                        }`}
-                        onClick={(e) =>
-                          project.demoUrl === "#" && e.preventDefault()
-                        }
-                      >
-                        <Eye size={16} />
-                        {project.demoUrl === "#" ? "Coming Soon" : "Live Demo"}
-                      </motion.a>
+                      {(project.demoUrl || project.liveDemo) && (
+                        <motion.a
+                          href={project.demoUrl || project.liveDemo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                          className={`flex-1 inline-flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ${
+                            (project.demoUrl || project.liveDemo) === "#"
+                              ? "bg-muted text-muted-foreground cursor-not-allowed border border-border"
+                              : "bg-primary text-primary-foreground hover:bg-primary/90"
+                          }`}
+                          onClick={(e) =>
+                            (project.demoUrl || project.liveDemo) === "#" && e.preventDefault()
+                          }
+                        >
+                          <Eye size={16} />
+                          {(project.demoUrl || project.liveDemo) === "#" ? t("projects.comingSoon") : t("projects.liveDemo")}
+                        </motion.a>
+                      )}
 
-                      <motion.a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                        className={`inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-sm font-medium border transition-all duration-300 ${
-                          project.githubUrl === "#"
-                            ? "bg-muted text-muted-foreground cursor-not-allowed border-border"
-                            : "bg-background text-foreground border-border hover:border-primary hover:bg-primary/5"
-                        }`}
-                        onClick={(e) =>
-                          project.githubUrl === "#" && e.preventDefault()
-                        }
-                      >
-                        <Github size={16} />
-                        Code
-                      </motion.a>
+                      {(project.githubUrl || project.github) && (
+                        <motion.a
+                          href={project.githubUrl || project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                          className={`inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-sm font-medium border transition-all duration-300 ${
+                            (project.githubUrl || project.github) === "#"
+                              ? "bg-muted text-muted-foreground cursor-not-allowed border-border"
+                              : "bg-background text-foreground border-border hover:border-primary hover:bg-primary/5"
+                          }`}
+                          onClick={(e) =>
+                            (project.githubUrl || project.github) === "#" && e.preventDefault()
+                          }
+                        >
+                          <Github size={16} />
+                          {t("projects.code")}
+                        </motion.a>
+                      )}
+
+                      {(project.linkedinUrl || project.linkedin) && (
+                        <motion.a
+                          href={project.linkedinUrl || project.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                          className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-sm font-medium transition-all duration-300 bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm"
+                        >
+                          <Linkedin size={16} />
+                          {t("projects.viewLinkedIn", { defaultValue: "LinkedIn" })}
+                        </motion.a>
+                      )}
                     </div>
                   </div>
 
@@ -532,12 +624,12 @@ export const ProjectsSection = () => {
               {showAll ? (
                 <>
                   <ChevronUp size={18} />
-                  Show Less
+                  {t("projects.showLess")}
                 </>
               ) : (
                 <>
-                  View More Projects
-                  <ArrowRight size={18} />
+                  {t("projects.viewMore")}
+                  <ArrowRight size={18} className="rtl:rotate-180" />
                 </>
               )}
             </motion.button>
@@ -560,15 +652,14 @@ export const ProjectsSection = () => {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6"
             >
               <Zap className="h-4 w-4" />
-              Get In Touch
+              {t("projects.getInTouch")}
             </motion.div>
 
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              Like what you see?
+              {t("projects.ctaTitle")}
             </h3>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              I'm always open to discussing new opportunities and interesting
-              projects.
+              {t("projects.ctaDesc")}
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -578,8 +669,8 @@ export const ProjectsSection = () => {
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
               >
-                Contact Me
-                <ArrowRight size={18} />
+                {t("projects.contactMe")}
+                <ArrowRight size={18} className="rtl:rotate-180" />
               </motion.a>
 
               <motion.a
@@ -591,7 +682,7 @@ export const ProjectsSection = () => {
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-medium border border-border text-foreground hover:border-primary hover:bg-primary/5 transition-all duration-300"
               >
                 <Github size={18} />
-                View GitHub
+                {t("projects.viewGithub")}
               </motion.a>
             </div>
           </div>
@@ -613,17 +704,17 @@ export const ProjectsSection = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ type: "spring", damping: 25 }}
-              className="relative bg-background rounded-2xl overflow-hidden shadow-2xl max-w-4xl w-full max-h-[80vh]"
+              className="relative bg-background rounded-2xl overflow-hidden shadow-2xl max-w-4xl w-full max-h-[80vh] text-start"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
               <div className="flex items-center justify-between p-6 border-b border-border">
                 <div>
                   <h3 className="text-xl font-bold text-foreground">
-                    {selectedVideo.title} Demo
+                    {getProjectTitle(selectedVideo)} {t("projects.videoDemo")}
                   </h3>
                   <p className="text-muted-foreground text-sm">
-                    {selectedVideo.category}
+                    {getProjectCategory(selectedVideo)}
                   </p>
                 </div>
                 <motion.button
@@ -646,7 +737,7 @@ export const ProjectsSection = () => {
                   className="w-full h-full object-contain"
                   onEnded={handleCloseVideo}
                 >
-                  Your browser does not support the video tag.
+                  {t("projects.videoNotSupported")}
                 </video>
               </div>
 
@@ -654,7 +745,7 @@ export const ProjectsSection = () => {
               <div className="p-6 border-t border-border">
                 <div className="flex flex-col sm:flex-row gap-4 justify-between items-center">
                   <p className="text-muted-foreground text-sm flex-1">
-                    Watch the demo of {selectedVideo.title} in action
+                    {t("projects.watchDemo", { title: getProjectTitle(selectedVideo) })}
                   </p>
                   <div className="flex gap-3">
                     <motion.a
@@ -672,7 +763,7 @@ export const ProjectsSection = () => {
                         selectedVideo.demoUrl === "#" && e.preventDefault()
                       }
                     >
-                      Visit Live Site
+                      {t("projects.visitLiveSite")}
                     </motion.a>
                     <motion.a
                       href={selectedVideo.githubUrl}
@@ -689,7 +780,7 @@ export const ProjectsSection = () => {
                         selectedVideo.githubUrl === "#" && e.preventDefault()
                       }
                     >
-                      View Code
+                      {t("projects.viewCode")}
                     </motion.a>
                   </div>
                 </div>

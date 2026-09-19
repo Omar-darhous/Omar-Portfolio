@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Import your images
@@ -175,11 +176,42 @@ const InfiniteScrollSkills = ({ skills }) => {
   );
 };
 
+const categoryStyles = {
+  all: "bg-gradient-to-r from-purple-500 to-pink-500",
+  frontend: "bg-gradient-to-r from-blue-500 to-cyan-500",
+  backend: "bg-gradient-to-r from-green-500 to-emerald-500",
+  tools: "bg-gradient-to-r from-orange-500 to-yellow-500",
+};
+
 export const SkillsSection = () => {
+  const { t } = useTranslation();
   const [activeCategory, setActiveCategory] = useState("all");
   const filteredSkills = skills.filter(
     (skill) => activeCategory === "all" || skill.category === activeCategory
   );
+
+  const categories = [
+    {
+      id: "all",
+      label: t("skills.allSkills"),
+      color: categoryStyles.all,
+    },
+    {
+      id: "frontend",
+      label: t("skills.frontend"),
+      color: categoryStyles.frontend,
+    },
+    {
+      id: "backend",
+      label: t("skills.backend"),
+      color: categoryStyles.backend,
+    },
+    {
+      id: "tools",
+      label: t("skills.tools"),
+      color: categoryStyles.tools,
+    },
+  ];
 
   return (
     <section
@@ -193,10 +225,10 @@ export const SkillsSection = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
-            My Skills
+            {t("skills.title")}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Technologies I've mastered and my proficiency levels
+            {t("skills.subtitle")}
           </p>
         </motion.div>
 
@@ -233,7 +265,7 @@ export const SkillsSection = () => {
                   className="bg-card p-6 rounded-2xl border border-border/30 hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-lg group"
                 >
                   <div className="flex items-start gap-4 mb-5">
-                    <div className="w-12 h-12 rounded-full bg-card border-2 border-primary/50 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-card border-2 border-primary/50 flex items-center justify-center shrink-0">
                       <img
                         src={iconImages[skill.icon]}
                         alt={skill.name}
@@ -259,9 +291,9 @@ export const SkillsSection = () => {
                       </div>
                       <SkillBar level={skill.level} />
                       <div className="mt-2 flex justify-between text-xs text-muted-foreground">
-                        <span>Basic</span>
-                        <span>Advanced</span>
-                        <span>Expert</span>
+                        <span>{t("skills.basic")}</span>
+                        <span>{t("skills.advanced")}</span>
+                        <span>{t("skills.expert")}</span>
                       </div>
                     </div>
                   </div>

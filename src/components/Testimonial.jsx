@@ -2,9 +2,11 @@
 import { motion } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { useInView } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 export const TestimonialSection = () => {
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(3);
   const ref = useRef(null);
@@ -13,25 +15,28 @@ export const TestimonialSection = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Alex Johnson",
-      role: "Product Director at TechCorp",
-      content: `Working with Omar was seamless from day one. Not only did they deliver a full-stack solution ahead of schedule, but they also communicated clearly throughout the project. It's rare to find a developer who understands both the tech and the business side so well`,
+      key: "alex",
+      name: t("testimonials.items.alex.name"),
+      role: t("testimonials.items.alex.role"),
+      content: t("testimonials.items.alex.content"),
       rating: 5,
       image: "/testimonials/alex-johnson.png",
     },
     {
       id: 2,
-      name: "Maria Chen",
-      role: "Senior UX Designer at DesignHub",
-      content: `I've reviewed hundreds of portfolios, and his work is truly exceptional. Tway the animations guide attention while maintaining performance is masterful. The gradient elements add depth without overwhelming.`,
+      key: "maria",
+      name: t("testimonials.items.maria.name"),
+      role: t("testimonials.items.maria.role"),
+      content: t("testimonials.items.maria.content"),
       rating: 5,
       image: "/testimonials/maria-chen.png",
     },
     {
       id: 3,
-      name: "David Wilson",
-      role: "CTO at Startup Ventures",
-      content: `From wireframes to deployment, Sahil owned the entire stack with confidence and creativity. The final product is fast, reliable, and looks incredible. I wouldn't hesitate to work with them again.`,
+      key: "david",
+      name: t("testimonials.items.david.name"),
+      role: t("testimonials.items.david.role"),
+      content: t("testimonials.items.david.content"),
       rating: 5,
       image: "/testimonials/David Wilson.png",
     },
@@ -152,20 +157,20 @@ export const TestimonialSection = () => {
               transition={{ delay: 0.4 }}
             >
               <Star className="h-3 w-3 sm:h-4 sm:w-4" />
-              Client Feedback
+              {t("testimonials.badge")}
               <Star className="h-3 w-3 sm:h-4 sm:w-4" />
             </motion.div>
             <motion.h2
               className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight"
               variants={itemVariants}
             >
-              What People Say
+              {t("testimonials.title")}
             </motion.h2>
             <motion.p
               className="text-base sm:text-lg text-muted-foreground mt-3 sm:mt-4 max-w-2xl mx-auto"
               variants={itemVariants}
             >
-              What Clients Will Say About Working with Me.
+              {t("testimonials.subtitle")}
             </motion.p>
           </motion.div>
 
@@ -174,14 +179,14 @@ export const TestimonialSection = () => {
               {visibleTestimonials.map((testimonial) => (
                 <motion.div
                   key={testimonial.id}
-                  className="bg-background/80 backdrop-blur-sm border rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-all h-full flex flex-col group"
+                  className="bg-background/80 backdrop-blur-sm border rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-all h-full flex flex-col group text-start"
                   variants={itemVariants}
                   whileHover={{ y: -5 }}
                 >
                   <div className="flex flex-col h-full">
                     <Quote className="h-6 w-6 sm:h-8 sm:w-8 text-primary/30 mb-3 sm:mb-4 group-hover:text-primary/50 transition-colors" />
 
-                    <p className="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6 flex-1">
+                    <p className="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6 flex-1 text-start">
                       "{testimonial.content}"
                     </p>
 
@@ -200,7 +205,7 @@ export const TestimonialSection = () => {
                       </div>
 
                       <div className="flex items-center gap-3 sm:gap-4 mt-3 sm:mt-4">
-                        <div className="relative h-10 w-10 sm:h-12 sm:w-12 rounded-full border-2 border-primary/20 group-hover:border-primary/50 overflow-hidden transition-all">
+                        <div className="relative h-10 w-10 sm:h-12 sm:w-12 rounded-full border-2 border-primary/20 group-hover:border-primary/50 overflow-hidden transition-all shrink-0">
                           {testimonial.image ? (
                             <img
                               src={testimonial.image}
@@ -214,7 +219,7 @@ export const TestimonialSection = () => {
                             </div>
                           )}
                         </div>
-                        <div>
+                        <div className="text-start">
                           <p className="font-medium text-sm sm:text-base">
                             {testimonial.name}
                           </p>
@@ -235,17 +240,17 @@ export const TestimonialSection = () => {
                 <button
                   onClick={prevTestimonial}
                   className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-4 p-2 sm:p-3 rounded-full border border-muted-foreground/20 hover:border-primary/50 bg-background/80 backdrop-blur-sm transition-all shadow-lg z-10 hidden sm:flex items-center justify-center hover:scale-110"
-                  aria-label="Previous testimonial"
+                  aria-label={t("testimonials.prevTestimonial")}
                 >
-                  <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
+                  <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 rtl:rotate-180" />
                 </button>
 
                 <button
                   onClick={nextTestimonial}
                   className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-4 p-2 sm:p-3 rounded-full border border-muted-foreground/20 hover:border-primary/50 bg-background/80 backdrop-blur-sm transition-all shadow-lg z-10 hidden sm:flex items-center justify-center hover:scale-110"
-                  aria-label="Next testimonial"
+                  aria-label={t("testimonials.nextTestimonial")}
                 >
-                  <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
+                  <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 rtl:rotate-180" />
                 </button>
               </>
             )}
@@ -257,9 +262,9 @@ export const TestimonialSection = () => {
               <button
                 onClick={prevTestimonial}
                 className="p-1 sm:p-2 rounded-full border border-muted-foreground/20 hover:border-primary/50 bg-background/80 backdrop-blur-sm transition-all hover:scale-110"
-                aria-label="Previous testimonial"
+                aria-label={t("testimonials.prevTestimonial")}
               >
-                <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
+                <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5 rtl:rotate-180" />
               </button>
 
               <div className="flex items-center gap-2">
@@ -272,7 +277,7 @@ export const TestimonialSection = () => {
                         ? "bg-primary"
                         : "bg-muted-foreground/20"
                     }`}
-                    aria-label={`Go to testimonial ${index + 1}`}
+                    aria-label={t("testimonials.goToTestimonial", { index: index + 1 })}
                   />
                 ))}
               </div>
@@ -280,9 +285,9 @@ export const TestimonialSection = () => {
               <button
                 onClick={nextTestimonial}
                 className="p-1 sm:p-2 rounded-full border border-muted-foreground/20 hover:border-primary/50 bg-background/80 backdrop-blur-sm transition-all hover:scale-110"
-                aria-label="Next testimonial"
+                aria-label={t("testimonials.nextTestimonial")}
               >
-                <ChevronRight className="h-4 w-4 sm:h-5 sm:h-5" />
+                <ChevronRight className="h-4 w-4 sm:h-5 sm:h-5 rtl:rotate-180" />
               </button>
             </div>
           )}

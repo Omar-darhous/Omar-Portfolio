@@ -1,0 +1,252 @@
+{
+  "seo": {
+    "title": "Omar Darhous - Full-Stack-Entwickler | React & JavaScript Spezialist",
+    "description": "Omar Darhous: Erfahrener Full-Stack-Entwickler, spezialisiert auf React, JavaScript und moderne Webtechnologien. Entwicklung performanter und responsiver Webanwendungen."
+  },
+  "nav": {
+    "home": "Startseite",
+    "about": "Über mich",
+    "skills": "Fähigkeiten",
+    "projects": "Projekte",
+    "testimonials": "Referenzen",
+    "contact": "Kontakt",
+    "toggleTheme": "Design wechseln",
+    "githubProfile": "GitHub-Profil",
+    "linkedinProfile": "LinkedIn-Profil",
+    "playMusic": "Musik abspielen",
+    "pauseMusic": "Musik pausieren",
+    "loadingMusic": "Musik wird geladen..."
+  },
+  "language": {
+    "selectLanguage": "Sprache wählen",
+    "en": "English",
+    "ar": "العربية",
+    "de": "Deutsch"
+  },
+  "welcome": {
+    "messages": [
+      "Digitale Erlebnisse gestalten",
+      "Software Engineer",
+      "Full-Stack-Webentwicklung"
+    ],
+    "hello": "Hallo",
+    "there": "zusammen !",
+    "siteNote": "(Dies ist mein Portfolio-Website)",
+    "loading": "Lade meine besten Projekte für Sie..."
+  },
+  "hero": {
+    "status": "Offen für neue berufliche Möglichkeiten",
+    "greeting": "Ich bin Omar",
+    "role": "Full-Stack-Entwickler",
+    "descriptionPart1": "Ich entwickle",
+    "descriptionHighlight": "leistungsstarke Webanwendungen",
+    "descriptionPart2": ", die das Unternehmenswachstum vorantreiben. Spezialisiert auf React, Node.js und skalierbare Architekturen für Startups und etablierte Unternehmen.",
+    "yearsInProduction": "Jahre Produktionserfahrung",
+    "projectsDelivered": "Erfolgreiche Projekte",
+    "clientSatisfaction": "Kundenzufriedenheit",
+    "projectsCompleted": "Abgeschlossene Projekte",
+    "viewCaseStudies": "Fallstudien ansehen",
+    "technicalInterview": "Technisches Gespräch",
+    "viewResume": "Lebenslauf ansehen",
+    "availableImmediately": "Sofort verfügbar",
+    "availableForRoles": "für Full-Stack- und Frontend-Positionen",
+    "solutionsBadge": "Lösungen",
+    "builtWith": "Erstellt mit",
+    "modernTech": "Moderne Tech",
+    "explorePortfolio": "Technisches Portfolio entdecken"
+  },
+  "about": {
+    "badge": "ÜBER MICH",
+    "titlePart1": "Ideen in die",
+    "titlePart2": "Realität umsetzen",
+    "subtitlePart1": "Entwicklung digitaler Erlebnisse, die",
+    "subtitleInnovation": "Innovation",
+    "subtitlePerformance": "Performance",
+    "subtitleAnd": "und",
+    "subtitleElegance": "Eleganz",
+    "role": "Full-Stack-Entwickler",
+    "statProjects": "Projekte",
+    "statYearsExp": "Jahre Erf.",
+    "statSuccess": "Erfolg",
+    "statClients": "Kunden",
+    "tabPersonal": "Persönlich",
+    "tabProfessional": "Beruflich",
+    "tabApproach": "Arbeitsweise",
+    "personalContent": "Mit Leidenschaft entwickle ich digitale Lösungen, die einen echten Unterschied machen. Wenn ich nicht programmiere, erkunde ich neue Technologien, engagiere mich in Open-Source-Projekten und unterstütze angehende Entwickler als Mentor.",
+    "professionalContent": "Mit fundierter Erfahrung in der Full-Stack-Entwicklung habe ich über 10 erfolgreiche Projekte mit modernen Webtechnologien realisiert. Mein Fokus liegt auf skalierbaren Architekturen und gezielter Performance-Optimierung.",
+    "approachContent": "Ich lege größten Wert auf sauberen Code, gründliche automatisierte Tests und nutzerzentriertes Design. Mein Arbeitsstil zeichnet sich durch enge Zusammenarbeit, agile Methoden und kontinuierliche Verbesserung aus.",
+    "techStackOverview": "Technologie-Stack im Überblick",
+    "categoryFrontend": "Frontend",
+    "categoryBackend": "Backend",
+    "categoryCloud": "Cloud",
+    "workTogether": "Lassen Sie uns zusammenarbeiten",
+    "startProject": "Projekt starten",
+    "downloadResume": "Lebenslauf herunterladen",
+    "quickConnect": "Schnellkontakt",
+    "whyChooseMe": "Warum mit mir arbeiten?",
+    "features": [
+      "Umfassende Full-Stack-Expertise",
+      "Sauberer, wartbarer Code",
+      "Gezielte Performance-Optimierung",
+      "Agile Vorgehensweise",
+      "Zuverlässiger Support",
+      "Termingerechte Lieferung"
+    ],
+    "available": "Verfügbar",
+    "forNewProjects": "Für neue Projekte",
+    "responseTime": "⚡ Antwortzeit: Unter 24 Stunden"
+  },
+  "skills": {
+    "title": "Meine Fähigkeiten",
+    "subtitle": "Technologien, die ich beherrsche, und mein jeweiliges Kenntnisniveau",
+    "allSkills": "Alle Fähigkeiten",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Werkzeuge",
+    "basic": "Grundkenntnisse",
+    "advanced": "Fortgeschritten",
+    "expert": "Experte"
+  },
+  "projects": {
+    "badge": "Meine Projekte",
+    "titlePart1": "Projekt-",
+    "titlePart2": "Portfolio",
+    "subtitle": "Eine Auswahl an Projekten, die meine Kompetenzen in der Full-Stack-Entwicklung und modernen Webtechnologien demonstrieren.",
+    "filterAll": "Alle",
+    "featured": "Hervorgehoben",
+    "liveDemo": "Live-Demo",
+    "comingSoon": "Demnächst",
+    "code": "Code",
+    "viewMore": "Weitere Projekte anzeigen",
+    "showLess": "Weniger anzeigen",
+    "getInTouch": "Kontakt aufnehmen",
+    "ctaTitle": "Gefällt Ihnen, was Sie sehen?",
+    "ctaDesc": "Ich bin jederzeit offen für Gespräche über neue berufliche Herausforderungen und spannende Projekte.",
+    "contactMe": "Kontaktieren Sie mich",
+    "viewGithub": "Auf GitHub ansehen",
+    "videoDemo": "Demo",
+    "watchDemo": "Sehen Sie sich die Demo von {{title}} in Aktion an",
+    "visitLiveSite": "Live-Website besuchen",
+    "viewCode": "Quellcode ansehen",
+    "viewLinkedIn": "Auf LinkedIn ansehen",
+    "videoNotSupported": "Ihr Browser unterstützt dieses Videoformat leider nicht.",
+    "items": {
+      "civilisation": {
+        "title": "Civilisation Sprite Plattform",
+        "category": "Civilisation sprite platform",
+        "description": "Entwicklung einer responsiven Tourismusplattform mit React, Firebase Authentication und REST-API-Integration – inklusive geschützter Routen, dynamischem Content-Rendering und einer skalierbaren Komponentenarchitektur für den produktiven Einsatz."
+      },
+      "movies": {
+        "title": "Movie & TV Shows App",
+        "category": "MyMovie App",
+        "description": "Entwicklung einer responsiven React & Vite Web-App zur Einbindung der TMDB-API für Echtzeitdaten zu Filmen, Serien und Darstellern – mit Tailwind CSS, Zustand, React Router und Chart.js für interaktive Dashboards."
+      },
+      "pizza": {
+        "title": "Fast Pizza App",
+        "category": "Fast Pizza App",
+        "description": "Fast Pizza – eine moderne Webanwendung mit React, Vite und Tailwind CSS unter Verwendung von Redux Toolkit für das State Management. Bietet dynamische Menüauswahl, Warenkorbfunktionen und automatische Standorterkennung via Web-APIs."
+      },
+      "gohary": {
+        "title": "gohary phone",
+        "category": "gohary phone",
+        "status": "Aktuell im Einsatz",
+        "description": "Ein Full-Stack-Managementsystem für das Mobiltelefongeschäft gohary phone zur Verwaltung von Produkten, Inventar, Verkäufen, Einkäufen, Mitarbeitern, Ausgaben, Reparaturen, Vodafone-Cash-Transaktionen und Geschäftsberichten. Das System ist derzeit für den täglichen Geschäftsbetrieb im Einsatz."
+      },
+      "ecommerce": {
+        "title": "E-Commerce Webshop",
+        "category": "Personal phone store Application",
+        "description": "Entwicklung eines responsiven Onlineshops für Smartphones und Zubehör mit React.js. Ermöglicht detailliertes Produktsurfen, Spezifikationsvergleiche und intuitive Warenkorbverwaltung mit RESTful APIs und optimierter UX auf allen Endgeräten."
+      },
+      "task": {
+        "title": "Task Manager App",
+        "category": "Task manager App",
+        "description": "Entwicklung einer flexiblen Aufgabenverwaltungs-App mit React.js zur effizienten Organisation und Nachverfolgung von Aufgaben. Mit wiederverwendbaren Komponenten, Formularvalidierung und reaktiver Datenanbindung."
+      },
+      "kora": {
+        "title": "Kora Score Sportplattform",
+        "category": "kora score App",
+        "description": "Entwicklung einer Sportplattform mit Live-Spielplänen, Echtzeit-Spielständen und Tabellenständen führender Wettbewerbe (Europäische Top-5-Ligen, ägyptische, saudische und US-amerikanische Ligen) inklusive aktuellem Newsfeed."
+      },
+      "weather": {
+        "title": "Wetter-App",
+        "category": "Weather App",
+        "description": "Eine übersichtliche und moderne Wetter-Anwendung zur Abfrage aktueller Wetterdaten für beliebige Städte weltweit. Zeigt Temperatur, Luftfeuchtigkeit, Windgeschwindigkeit und Wetterbedingungen in einer reaktionsschnellen Benutzeroberfläche."
+      },
+      "recipe": {
+        "title": "Rezept- & Koch-App",
+        "category": "Ricepe-food Application",
+        "description": "Umfassende Rezept-App mit React zur Entdeckung vielfältiger Gerichte aus aller Welt (italienisch, asiatisch, amerikanisch etc.) mit intuitiver Kategoriesuche und Schnellfilterung nach Lieblingsrezepten."
+      }
+    }
+  },
+  "testimonials": {
+    "badge": "Kundenfeedback",
+    "title": "Was andere sagen",
+    "subtitle": "Rückmeldungen von Partnern und Kunden über die Zusammenarbeit mit mir.",
+    "prevTestimonial": "Vorherige Referenz",
+    "nextTestimonial": "Nächste Referenz",
+    "goToTestimonial": "Zu Referenz {{index}} gehen",
+    "items": {
+      "alex": {
+        "name": "Alex Johnson",
+        "role": "Product Director bei TechCorp",
+        "content": "Die Zusammenarbeit mit Omar war vom ersten Tag an absolut reibungslos. Er hat nicht nur eine vollständige Full-Stack-Lösung vor dem Zeitplan geliefert, sondern während des gesamten Projekts stets klar und transparent kommuniziert. Es ist selten, einen Entwickler zu finden, der sowohl die technische Tiefe als auch die geschäftlichen Anforderungen so präzise versteht."
+      },
+      "maria": {
+        "name": "Maria Chen",
+        "role": "Senior UX Designerin bei DesignHub",
+        "content": "Ich habe Hunderte Portfolios begutachtet, und Omars Arbeit ist wirklich herausragend. Die Art und Weise, wie subtile Animationen die Aufmerksamkeit leiten, ohne die Performance zu beeinträchtigen, ist meisterhaft umgesetzt. Die Farbverläufe verleihen Tiefe, ohne zu überladen."
+      },
+      "david": {
+        "name": "David Wilson",
+        "role": "CTO bei Startup Ventures",
+        "content": "Von den ersten Wireframes bis zum Live-Deployment hat Omar den gesamten Tech-Stack mit großer Souveränität und Kreativität gemeistert. Das Endprodukt ist schnell, zuverlässig und sieht erstklassig aus. Ich würde jederzeit wieder mit ihm zusammenarbeiten."
+      }
+    }
+  },
+  "contact": {
+    "badge": "Kontakt",
+    "title": "Treten Sie in Kontakt",
+    "subtitle": "Haben Sie ein konkretes Projekt im Sinn oder möchten sich austauschen? Meine Inbox steht Ihnen jederzeit offen.",
+    "detailsTitle": "Kontaktdaten",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "location": "Standort",
+    "locationValue": "Kairo, Ägypten",
+    "findMeOn": "Finden Sie mich auf",
+    "formTitle": "Schreiben Sie mir eine Nachricht",
+    "nameLabel": "Ihr Name",
+    "namePlaceholder": "Max Mustermann",
+    "emailLabel": "Ihre E-Mail",
+    "emailPlaceholder": "max@beispiel.de",
+    "messageLabel": "Ihre Nachricht",
+    "messagePlaceholder": "Hallo, ich würde mich gerne über ein Projekt austauschen...",
+    "sendMessage": "Nachricht senden",
+    "sending": "Wird gesendet...",
+    "valNameRequired": "Name ist ein Pflichtfeld",
+    "valEmailRequired": "E-Mail ist ein Pflichtfeld",
+    "valEmailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+    "valMessageLength": "Die Nachricht muss mindestens 10 Zeichen lang sein",
+    "toastSuccessTitle": "Nachricht gesendet! 🎉",
+    "toastSuccessDesc": "Ich melde mich innerhalb von 24 Stunden bei Ihnen.",
+    "toastErrorTitle": "Etwas ist schiefgelaufen",
+    "toastErrorDesc": "Bitte versuchen Sie es erneut oder kontaktieren Sie mich direkt unter omardarhous111@gmail.com"
+  },
+  "footer": {
+    "tagline": "Entwickler für nutzerzentrierte, wirkungsvolle Webanwendungen.",
+    "navigation": "Navigation",
+    "contact": "Kontakt",
+    "newsletter": "Newsletter",
+    "newsletterDesc": "Abonnieren Sie Updates über meine neuesten Projekte und Veröffentlichungen.",
+    "emailPlaceholder": "Ihre E-Mail-Adresse",
+    "subscribe": "Abonnieren",
+    "copyright": "© {{year}} Omar. Alle Rechte vorbehalten.",
+    "privacy": "Datenschutz",
+    "terms": "AGB",
+    "cookies": "Cookies",
+    "backToTop": "Nach oben"
+  },
+  "notFound": {
+    "text": "Seite nicht gefunden"
+  }
+}

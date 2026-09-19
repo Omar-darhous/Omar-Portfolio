@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import {
   Briefcase,
   Code,
@@ -15,6 +16,7 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 
 export const AboutSection = () => {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("personal");
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [counter, setCounter] = useState(0);
@@ -22,25 +24,25 @@ export const AboutSection = () => {
   const achievements = [
     {
       number: "10+",
-      label: "Projects",
+      label: t("about.statProjects"),
       icon: <Briefcase className="h-5 w-5" />,
       suffix: "",
     },
     {
       number: "2",
-      label: "Years Exp",
+      label: t("about.statYearsExp"),
       icon: <Calendar className="h-5 w-5" />,
       suffix: "+",
     },
     {
       number: "99",
-      label: "Success",
+      label: t("about.statSuccess"),
       icon: <Target className="h-5 w-5" />,
       suffix: "%",
     },
     {
       number: "7",
-      label: "Clients",
+      label: t("about.statClients"),
       icon: <User className="h-5 w-5" />,
       suffix: "+",
     },
@@ -48,7 +50,7 @@ export const AboutSection = () => {
 
   const techStack = [
     {
-      category: "Frontend",
+      category: t("about.categoryFrontend"),
       items: [
         "React",
         "Next.js",
@@ -58,11 +60,11 @@ export const AboutSection = () => {
         "Tailwind",
       ],
     },
-    { category: "Backend", items: ["Node.js", "Express", "Java"] },
-    { category: "Cloud", items: ["AWS", "Docker", "Vercel", "MongoDB"] },
+    { category: t("about.categoryBackend"), items: ["Node.js", "Express", "Java"] },
+    { category: t("about.categoryCloud"), items: ["AWS", "Docker", "Vercel", "MongoDB"] },
   ];
 
-  const features = [
+  const features = t("about.features", { returnObjects: true }) || [
     "Full-stack expertise",
     "Clean, maintainable code",
     "Performance optimization",
@@ -87,12 +89,9 @@ export const AboutSection = () => {
   ];
 
   const tabContent = {
-    personal:
-      "Passionate about creating digital solutions that make a difference. When I'm not coding, I'm exploring new technologies, contributing to open-source, and mentoring aspiring developers.",
-    professional:
-      "With 1+ years in full-stack development, I've delivered 10+ successful projects using modern technologies. I specialize in scalable architecture and performance optimization.",
-    approach:
-      "I believe in clean code, thorough testing, and user-centered design. My process emphasizes collaboration, agile methodologies, and continuous improvement.",
+    personal: t("about.personalContent"),
+    professional: t("about.professionalContent"),
+    approach: t("about.approachContent"),
   };
 
   useEffect(() => {
@@ -161,22 +160,23 @@ export const AboutSection = () => {
               <div className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full animate-ping" />
             </div>
             <span className="text-sm sm:text-base font-semibold text-primary tracking-wide">
-              ABOUT ME
+              {t("about.badge")}
             </span>
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6">
             <span className="bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
-              Transforming
+              {t("about.titlePart1")}
             </span>
             <span className="block text-primary animate-pulse">
-              Ideas Into Reality
+              {t("about.titlePart2")}
             </span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Building digital experiences that combine{" "}
-            <span className="text-primary font-semibold">innovation</span>,{" "}
-            <span className="text-primary font-semibold">performance</span>, and{" "}
-            <span className="text-primary font-semibold">elegance</span>
+            {t("about.subtitlePart1")}{" "}
+            <span className="text-primary font-semibold">{t("about.subtitleInnovation")}</span>,{" "}
+            <span className="text-primary font-semibold">{t("about.subtitlePerformance")}</span>,{" "}
+            {t("about.subtitleAnd")}{" "}
+            <span className="text-primary font-semibold">{t("about.subtitleElegance")}</span>
           </p>
         </div>
 
@@ -201,19 +201,19 @@ export const AboutSection = () => {
                         alt="Omar Darhous"
                         className="w-full h-full object-cover"
                       />
-                      <div className="absolute -bottom-2 -right-2 w-6 h-6 sm:w-8 sm:h-8 bg-green-500 rounded-full border-4 border-background flex items-center justify-center">
+                      <div className="absolute -bottom-2 -right-2 rtl:-right-auto rtl:-left-2 w-6 h-6 sm:w-8 sm:h-8 bg-green-500 rounded-full border-4 border-background flex items-center justify-center">
                         <div className="w-2 h-2 bg-green-300 rounded-full animate-pulse" />
                       </div>
                     </div>
                   </div>
 
                   {/* Achievements */}
-                  <div className="flex-1 text-center md:text-left">
+                  <div className="flex-1 text-center md:text-left rtl:md:text-right">
                     <h2 className="text-2xl sm:text-3xl font-bold mb-1 sm:mb-2">
                       Omar Darhous
                     </h2>
                     <p className="text-primary text-base sm:text-lg font-semibold mb-3 sm:mb-4">
-                      Full Stack Developer
+                      {t("about.role")}
                     </p>
                     <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
                       {achievements.map((achievement, index) => (
@@ -225,7 +225,7 @@ export const AboutSection = () => {
                               : ""
                           }`}
                         >
-                          <div className="flex items-center gap-2 justify-center md:justify-start">
+                          <div className="flex items-center gap-2 justify-center md:justify-start rtl:md:justify-start">
                             {achievement.icon}
                             <div>
                               <div className="font-bold text-sm sm:text-lg">
@@ -255,13 +255,13 @@ export const AboutSection = () => {
                           : "text-muted-foreground hover:text-foreground"
                       }`}
                     >
-                      {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                      {t(`about.tab${tab.charAt(0).toUpperCase() + tab.slice(1)}`)}
                     </button>
                   ))}
                 </div>
 
                 {/* Tab Content */}
-                <div className="min-h-[100px] sm:min-h-[120px]">
+                <div className="min-h-[100px] sm:min-h-[120px] text-center md:text-left rtl:md:text-right">
                   <AnimatePresence mode="sync">
                     <motion.p
                       key={activeTab}
@@ -281,8 +281,8 @@ export const AboutSection = () => {
             {/* Tech Stack */}
             <div className="bg-card/50 border border-border rounded-3xl p-6 sm:p-8 backdrop-blur-xl shadow-2xl transition-all duration-500 hover:shadow-3xl hover:border-primary/40 hover:bg-card/60">
               <h3 className="text-lg sm:text-2xl font-bold mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
-                <Code className="h-4 sm:h-6 w-4 sm:w-6 text-primary" />
-                Tech Stack Overview
+                <Code className="h-4 sm:h-6 w-4 sm:w-6 text-primary shrink-0" />
+                {t("about.techStackOverview")}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
                 {techStack.map((stack, index) => (
@@ -320,16 +320,16 @@ export const AboutSection = () => {
             {/* Work Together */}
             <div className="bg-card/50 border border-border rounded-3xl p-6 sm:p-8 backdrop-blur-xl shadow-2xl transition-all duration-500 hover:shadow-3xl hover:border-primary/40 hover:bg-card/60">
               <h3 className="text-lg sm:text-2xl font-bold mb-4 sm:mb-6 text-center">
-                Let's Work Together
+                {t("about.workTogether")}
               </h3>
-              <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <a
                   href="#contact"
                   className="flex-1 block w-full p-3 sm:p-4 bg-primary text-primary-foreground rounded-xl text-center font-semibold transition-all duration-300 hover:bg-primary/90 hover:scale-105 hover:shadow-lg group"
                 >
                   <div className="flex items-center justify-center gap-2 sm:gap-3">
                     <User className="h-4 sm:h-5 w-4 sm:w-5 group-hover:scale-110 transition-transform duration-300" />
-                    Start a Project
+                    {t("about.startProject")}
                   </div>
                 </a>
 
@@ -340,7 +340,7 @@ export const AboutSection = () => {
                 >
                   <div className="flex items-center justify-center gap-2 sm:gap-3">
                     <Download className="h-4 sm:h-5 w-4 sm:w-5 group-hover:translate-y-0.5 transition-transform duration-300" />
-                    Download Resume
+                    {t("about.downloadResume")}
                   </div>
                 </button>
               </div>
@@ -348,7 +348,7 @@ export const AboutSection = () => {
               {/* Social Links */}
               <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-background/50 rounded-xl border border-border">
                 <h4 className="font-semibold mb-2 text-center text-sm sm:text-base">
-                  Quick Connect
+                  {t("about.quickConnect")}
                 </h4>
                 <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
                   {socialLinks.map((social, index) => (
@@ -368,7 +368,7 @@ export const AboutSection = () => {
             <div className="bg-card/50 border border-border rounded-3xl p-4 sm:p-6 backdrop-blur-xl shadow-2xl transition-all duration-500 hover:shadow-3xl hover:border-primary/40 hover:bg-card/60">
               <h3 className="text-base sm:text-xl font-bold mb-3 sm:mb-4 flex items-center gap-2">
                 <Star className="h-4 sm:h-5 w-4 sm:w-5 text-primary" />
-                Why Choose Me
+                {t("about.whyChooseMe")}
               </h3>
               <div className="space-y-2 sm:space-y-3">
                 {features.map((feature, index) => (
@@ -394,15 +394,15 @@ export const AboutSection = () => {
                     <div className="absolute inset-0 w-2 sm:w-3 h-2 sm:h-3 bg-green-500 rounded-full animate-ping" />
                   </div>
                   <span className="font-semibold text-xs sm:text-sm">
-                    Available
+                    {t("about.available")}
                   </span>
                 </div>
                 <span className="text-xs sm:text-sm text-muted-foreground bg-green-500/10 text-green-600 px-2 py-1 rounded-lg">
-                  For new projects
+                  {t("about.forNewProjects")}
                 </span>
               </div>
               <div className="text-[10px] sm:text-xs text-muted-foreground text-center bg-background/50 rounded-lg p-1 sm:p-2">
-                ⚡ Response time: Under 24 hours
+                {t("about.responseTime")}
               </div>
             </div>
           </div>

@@ -11,9 +11,11 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslation } from "react-i18next";
 import { useState } from "react";
 
 export const ContactSection = () => {
+  const { t } = useTranslation();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -25,7 +27,7 @@ export const ContactSection = () => {
   const validateForm = () => {
     if (!formData.name.trim()) {
       toast({
-        title: "Name is required",
+        title: t("contact.valNameRequired"),
         variant: "destructive",
       });
       return false;
@@ -33,13 +35,13 @@ export const ContactSection = () => {
 
     if (!formData.email.trim()) {
       toast({
-        title: "Email is required",
+        title: t("contact.valEmailRequired"),
         variant: "destructive",
       });
       return false;
     } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
       toast({
-        title: "Invalid email format",
+        title: t("contact.valEmailInvalid"),
         variant: "destructive",
       });
       return false;
@@ -47,7 +49,7 @@ export const ContactSection = () => {
 
     if (!formData.message.trim() || formData.message.length < 10) {
       toast({
-        title: "Message must be at least 10 characters",
+        title: t("contact.valMessageLength"),
         variant: "destructive",
       });
       return false;
@@ -82,8 +84,8 @@ export const ContactSection = () => {
 
       if (response.ok) {
         toast({
-          title: "Message sent! 🎉",
-          description: "I'll get back to you within 24 hours.",
+          title: t("contact.toastSuccessTitle"),
+          description: t("contact.toastSuccessDesc"),
           variant: "success",
           className:
             "bg-green-600 text-white dark:bg-green-500 border border-green-700 shadow-lg",
@@ -94,9 +96,8 @@ export const ContactSection = () => {
       }
     } catch (error) {
       toast({
-        title: "Oops! Something went wrong",
-        description:
-          "Please try again or email me directly at codewithkinu@gmail.com",
+        title: t("contact.toastErrorTitle"),
+        description: t("contact.toastErrorDesc"),
         variant: "destructive",
       });
     } finally {
@@ -112,36 +113,35 @@ export const ContactSection = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12 sm:mb-16">
           <span className="inline-block px-3 py-1 text-xs sm:text-sm font-medium rounded-full bg-primary/10 text-primary mb-3 sm:mb-4">
-            Let's Connect
+            {t("contact.badge")}
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">
-            Get In Touch
+            {t("contact.title")}
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind or just want to say hi? My inbox is always
-            open.
+            {t("contact.subtitle")}
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
           {/* Contact Information */}
-          <div className="space-y-6 sm:space-y-8 p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-br from-secondary/20 to-background border border-border">
+          <div className="space-y-6 sm:space-y-8 p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-br from-secondary/20 to-background border border-border text-start">
             <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex items-center gap-2">
-              <span className="w-3 sm:w-4 h-3 sm:h-4 rounded-full bg-primary"></span>
-              Contact Details
+              <span className="w-3 sm:w-4 h-3 sm:h-4 rounded-full bg-primary shrink-0"></span>
+              {t("contact.detailsTitle")}
             </h3>
 
             <div className="space-y-4 sm:space-y-6">
               <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-accent/30 rounded-lg sm:rounded-xl transition-all duration-300">
-                <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-primary/10 text-primary">
+                <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-primary/10 text-primary shrink-0">
                   <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
                 <div>
                   <p className="text-xs sm:text-sm text-muted-foreground">
-                    Email
+                    {t("contact.email")}
                   </p>
                   <a
-                    href="mailto:codewithkinu@gmail.com"
+                    href="mailto:omardarhous111@gmail.com"
                     className="text-sm sm:text-base font-medium hover:text-primary transition-colors"
                   >
                     omardarhous111@gmail.com
@@ -150,16 +150,17 @@ export const ContactSection = () => {
               </div>
 
               <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-accent/30 rounded-lg sm:rounded-xl transition-all duration-300">
-                <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-primary/10 text-primary">
+                <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-primary/10 text-primary shrink-0">
                   <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
                 <div>
                   <p className="text-xs sm:text-sm text-muted-foreground">
-                    Phone
+                    {t("contact.phone")}
                   </p>
                   <a
-                    href="tel:+919315145594"
+                    href="tel:+201032960398"
                     className="text-sm sm:text-base font-medium hover:text-primary transition-colors"
+                    dir="ltr"
                   >
                     +20 1032960398
                   </a>
@@ -167,15 +168,15 @@ export const ContactSection = () => {
               </div>
 
               <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-accent/30 rounded-lg sm:rounded-xl transition-all duration-300">
-                <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-primary/10 text-primary">
+                <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-primary/10 text-primary shrink-0">
                   <MapPin className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
                 <div>
                   <p className="text-xs sm:text-sm text-muted-foreground">
-                    Location
+                    {t("contact.location")}
                   </p>
                   <span className="text-sm sm:text-base font-medium">
-                    Cairo ,egypt
+                    {t("contact.locationValue")}
                   </span>
                 </div>
               </div>
@@ -183,7 +184,7 @@ export const ContactSection = () => {
 
             <div className="pt-6 sm:pt-8">
               <h4 className="font-medium mb-3 sm:mb-4 text-xs sm:text-sm text-muted-foreground">
-                Find me on
+                {t("contact.findMeOn")}
               </h4>
               <div className="flex gap-2 sm:gap-3">
                 {[
@@ -214,10 +215,10 @@ export const ContactSection = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-card border border-border shadow-sm">
+          <div className="p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-card border border-border shadow-sm text-start">
             <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex items-center gap-2">
-              <span className="w-3 sm:w-4 h-3 sm:h-4 rounded-full bg-primary"></span>
-              Send Me a Message
+              <span className="w-3 sm:w-4 h-3 sm:h-4 rounded-full bg-primary shrink-0"></span>
+              {t("contact.formTitle")}
             </h3>
 
             <form className="space-y-4 sm:space-y-6" onSubmit={handleSubmit}>
@@ -226,7 +227,7 @@ export const ContactSection = () => {
                   htmlFor="name"
                   className="text-xs sm:text-sm font-medium text-muted-foreground"
                 >
-                  Your Name
+                  {t("contact.nameLabel")}
                 </label>
                 <input
                   type="text"
@@ -235,8 +236,8 @@ export const ContactSection = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all text-sm sm:text-base"
-                  placeholder="John Mony"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all text-sm sm:text-base text-start"
+                  placeholder={t("contact.namePlaceholder")}
                 />
               </div>
 
@@ -245,7 +246,7 @@ export const ContactSection = () => {
                   htmlFor="email"
                   className="text-xs sm:text-sm font-medium text-muted-foreground"
                 >
-                  Your Email
+                  {t("contact.emailLabel")}
                 </label>
                 <input
                   type="email"
@@ -254,8 +255,8 @@ export const ContactSection = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all text-sm sm:text-base"
-                  placeholder="john@example.com"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all text-sm sm:text-base text-start"
+                  placeholder={t("contact.emailPlaceholder")}
                 />
               </div>
 
@@ -264,7 +265,7 @@ export const ContactSection = () => {
                   htmlFor="message"
                   className="text-xs sm:text-sm font-medium text-muted-foreground"
                 >
-                  Your Message
+                  {t("contact.messageLabel")}
                 </label>
                 <textarea
                   id="message"
@@ -273,8 +274,8 @@ export const ContactSection = () => {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all resize-none text-sm sm:text-base"
-                  placeholder="Hey, I'd love to collaborate on..."
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all resize-none text-sm sm:text-base text-start"
+                  placeholder={t("contact.messagePlaceholder")}
                 />
               </div>
 
@@ -289,12 +290,12 @@ export const ContactSection = () => {
                 {isSubmitting ? (
                   <>
                     <Loader2 className="h-4 w-4 sm:h-5 sm:w-5 animate-spin" />
-                    Sending...
+                    {t("contact.sending")}
                   </>
                 ) : (
                   <>
-                    Send Message
-                    <Send size={16} className="sm:size-[18px]" />
+                    {t("contact.sendMessage")}
+                    <Send size={16} className="sm:size-[18px] rtl:rotate-180" />
                   </>
                 )}
               </button>

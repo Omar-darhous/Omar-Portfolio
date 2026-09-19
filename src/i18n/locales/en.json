@@ -1,0 +1,252 @@
+{
+  "seo": {
+    "title": "Omar Darhous - Full Stack Developer | React & JavaScript Specialist",
+    "description": "Omar Darhous: Expert Full Stack Developer specializing in React, JavaScript, and modern web technologies. Building responsive, high-performance web applications."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "toggleTheme": "Toggle theme",
+    "githubProfile": "GitHub Profile",
+    "linkedinProfile": "LinkedIn Profile",
+    "playMusic": "Play music",
+    "pauseMusic": "Pause music",
+    "loadingMusic": "Loading music..."
+  },
+  "language": {
+    "selectLanguage": "Select language",
+    "en": "English",
+    "ar": "العربية",
+    "de": "Deutsch"
+  },
+  "welcome": {
+    "messages": [
+      "Crafting digital experiences",
+      "Software Engineer",
+      "Full-stack development"
+    ],
+    "hello": "Hello",
+    "there": "There !",
+    "siteNote": "(This is my portfolio website)",
+    "loading": "Loading my best work for you..."
+  },
+  "hero": {
+    "status": "Currently Accepting new Opportunities",
+    "greeting": "I'm Omar",
+    "role": "Full-Stack Engineer",
+    "descriptionPart1": "I build",
+    "descriptionHighlight": "high-performance web applications",
+    "descriptionPart2": "that drive business growth. Specializing in React, Node.js, and scalable architecture for startups and enterprises.",
+    "yearsInProduction": "Years in Production",
+    "projectsDelivered": "Projects Delivered",
+    "clientSatisfaction": "Client Satisfaction",
+    "projectsCompleted": "Projects completed",
+    "viewCaseStudies": "View Case Studies",
+    "technicalInterview": "Technical Interview",
+    "viewResume": "View Resume",
+    "availableImmediately": "Available Immediately",
+    "availableForRoles": "for Full-Stack and Frontend roles",
+    "solutionsBadge": "Solutions",
+    "builtWith": "Built with",
+    "modernTech": "Modern Tech",
+    "explorePortfolio": "Explore Technical Portfolio"
+  },
+  "about": {
+    "badge": "ABOUT ME",
+    "titlePart1": "Transforming",
+    "titlePart2": "Ideas Into Reality",
+    "subtitlePart1": "Building digital experiences that combine",
+    "subtitleInnovation": "innovation",
+    "subtitlePerformance": "performance",
+    "subtitleAnd": "and",
+    "subtitleElegance": "elegance",
+    "role": "Full Stack Developer",
+    "statProjects": "Projects",
+    "statYearsExp": "Years Exp",
+    "statSuccess": "Success",
+    "statClients": "Clients",
+    "tabPersonal": "Personal",
+    "tabProfessional": "Professional",
+    "tabApproach": "Approach",
+    "personalContent": "Passionate about creating digital solutions that make a difference. When I'm not coding, I'm exploring new technologies, contributing to open-source, and mentoring aspiring developers.",
+    "professionalContent": "With 1+ years in full-stack development, I've delivered 10+ successful projects using modern technologies. I specialize in scalable architecture and performance optimization.",
+    "approachContent": "I believe in clean code, thorough testing, and user-centered design. My process emphasizes collaboration, agile methodologies, and continuous improvement.",
+    "techStackOverview": "Tech Stack Overview",
+    "categoryFrontend": "Frontend",
+    "categoryBackend": "Backend",
+    "categoryCloud": "Cloud",
+    "workTogether": "Let's Work Together",
+    "startProject": "Start a Project",
+    "downloadResume": "Download Resume",
+    "quickConnect": "Quick Connect",
+    "whyChooseMe": "Why Choose Me",
+    "features": [
+      "Full-stack expertise",
+      "Clean, maintainable code",
+      "Performance optimization",
+      "Agile methodology",
+      "24/7 support",
+      "Timely delivery"
+    ],
+    "available": "Available",
+    "forNewProjects": "For new projects",
+    "responseTime": "⚡ Response time: Under 24 hours"
+  },
+  "skills": {
+    "title": "My Skills",
+    "subtitle": "Technologies I've mastered and my proficiency levels",
+    "allSkills": "All Skills",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Tools",
+    "basic": "Basic",
+    "advanced": "Advanced",
+    "expert": "Expert"
+  },
+  "projects": {
+    "badge": "My Projects",
+    "titlePart1": "Project",
+    "titlePart2": "Portfolio",
+    "subtitle": "A collection of projects I've built to showcase my skills in full-stack development and modern web technologies.",
+    "filterAll": "All",
+    "featured": "Featured",
+    "liveDemo": "Live Demo",
+    "comingSoon": "Coming Soon",
+    "code": "Code",
+    "viewMore": "View More Projects",
+    "showLess": "Show Less",
+    "getInTouch": "Get In Touch",
+    "ctaTitle": "Like what you see?",
+    "ctaDesc": "I'm always open to discussing new opportunities and interesting projects.",
+    "contactMe": "Contact Me",
+    "viewGithub": "View GitHub",
+    "videoDemo": "Demo",
+    "watchDemo": "Watch the demo of {{title}} in action",
+    "visitLiveSite": "Visit Live Site",
+    "viewCode": "View Code",
+    "viewLinkedIn": "View on LinkedIn",
+    "videoNotSupported": "Your browser does not support the video tag.",
+    "items": {
+      "civilisation": {
+        "title": "Civilisation sprite platform",
+        "category": "Civilisation sprite platform",
+        "description": "Developed a responsive tourism platform using React, Firebase Authentication, and REST API integration, implementing secure login, protected routing, dynamic content rendering, and scalable component-based architecture ready for production expansion."
+      },
+      "movies": {
+        "title": "Movie & TV Shows App",
+        "category": "MyMovie App",
+        "description": "Developed MyMovie App Movie & TV Shows Web App, a responsive React & Vite frontend integrating TMDB API for real-time movie, TV show, and actor data, with Tailwind CSS, Zustand, React Router, and Chart.js for dynamic dashboards and interactive UI."
+      },
+      "pizza": {
+        "title": "Fast Pizza App",
+        "category": "Fast Pizza App",
+        "description": "Fast Pizza — a React + Vite + Tailwind web app with Redux Toolkit for state management, featuring dynamic menu browsing, cart operations, order management, and geolocation-based address resolution via public APIs."
+      },
+      "gohary": {
+        "title": "gohary phone",
+        "category": "gohary phone",
+        "status": "Currently in Use",
+        "description": "Developed a full-stack mobile store management system for gohary phone, designed to manage products, inventory, sales, purchases, employees, expenses, maintenance, Vodafone Cash transactions, and business reporting. The system is currently being used by the store for day-to-day operations."
+      },
+      "ecommerce": {
+        "title": "E-commerce Application",
+        "category": "Personal phone store Application",
+        "description": "Developed a responsive e-commerce platform for mobile phones and accessories using React.js, enabling users to browse products, view detailed specifications, and manage their shopping cart. Integrated RESTful APIs for product management, search, and filtering functionalities. Designed a user-friendly and mobile-responsive interface to provide a seamless shopping experience across devices."
+      },
+      "task": {
+        "title": "Task manager App",
+        "category": "Task manager App",
+        "description": "Developed a responsive task management application using React.js, enabling users to create, update, organize, and track tasks efficiently. Implemented reusable components, state management, and form validation to enhance user experience. Integrated RESTful APIs for seamless data handling and real-time updates. Focused on clean UI design, performance optimization, and responsive layouts across different devices."
+      },
+      "kora": {
+        "title": "kora score App",
+        "category": "kora score App",
+        "description": "Built a sports platform displaying live match schedules, real-time scores, and league standings for top-tier competitions (Top 5 European leagues, Egyptian, Saudi, and American leagues), with an integrated news feed"
+      },
+      "weather": {
+        "title": "Weather App",
+        "category": "Weather App",
+        "description": "A simple and modern Weather App that allows users to check real-time weather information for any city around the world. The app provides temperature, humidity, wind speed, and weather conditions using a clean and responsive UI."
+      },
+      "recipe": {
+        "title": "Ricepe-food Application",
+        "category": "Ricepe-food Application",
+        "description": "React Full Recipe App. This app allows you to discover a wide range of delicious recipes, including popular items, veggie picks, and various cuisine categories such as Italian, Chinese, Thai, and American. You can also use the search feature to find your favorite recipes quickly."
+      }
+    }
+  },
+  "testimonials": {
+    "badge": "Client Feedback",
+    "title": "What People Say",
+    "subtitle": "What Clients Will Say About Working with Me.",
+    "prevTestimonial": "Previous testimonial",
+    "nextTestimonial": "Next testimonial",
+    "goToTestimonial": "Go to testimonial {{index}}",
+    "items": {
+      "alex": {
+        "name": "Alex Johnson",
+        "role": "Product Director at TechCorp",
+        "content": "Working with Omar was seamless from day one. Not only did they deliver a full-stack solution ahead of schedule, but they also communicated clearly throughout the project. It's rare to find a developer who understands both the tech and the business side so well"
+      },
+      "maria": {
+        "name": "Maria Chen",
+        "role": "Senior UX Designer at DesignHub",
+        "content": "I've reviewed hundreds of portfolios, and his work is truly exceptional. Tway the animations guide attention while maintaining performance is masterful. The gradient elements add depth without overwhelming."
+      },
+      "david": {
+        "name": "David Wilson",
+        "role": "CTO at Startup Ventures",
+        "content": "From wireframes to deployment, Omar owned the entire stack with confidence and creativity. The final product is fast, reliable, and looks incredible. I wouldn't hesitate to work with them again."
+      }
+    }
+  },
+  "contact": {
+    "badge": "Let's Connect",
+    "title": "Get In Touch",
+    "subtitle": "Have a project in mind or just want to say hi? My inbox is always open.",
+    "detailsTitle": "Contact Details",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "locationValue": "Cairo, Egypt",
+    "findMeOn": "Find me on",
+    "formTitle": "Send Me a Message",
+    "nameLabel": "Your Name",
+    "namePlaceholder": "John Mony",
+    "emailLabel": "Your Email",
+    "emailPlaceholder": "john@example.com",
+    "messageLabel": "Your Message",
+    "messagePlaceholder": "Hey, I'd love to collaborate on...",
+    "sendMessage": "Send Message",
+    "sending": "Sending...",
+    "valNameRequired": "Name is required",
+    "valEmailRequired": "Email is required",
+    "valEmailInvalid": "Invalid email format",
+    "valMessageLength": "Message must be at least 10 characters",
+    "toastSuccessTitle": "Message sent! 🎉",
+    "toastSuccessDesc": "I'll get back to you within 24 hours.",
+    "toastErrorTitle": "Oops! Something went wrong",
+    "toastErrorDesc": "Please try again or email me directly at omardarhous111@gmail.com"
+  },
+  "footer": {
+    "tagline": "Developer creating meaningful experiences.",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "newsletter": "Newsletter",
+    "newsletterDesc": "Subscribe to get updates on my latest work.",
+    "emailPlaceholder": "Your email",
+    "subscribe": "Subscribe",
+    "copyright": "© {{year}} Omar. All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "cookies": "Cookies",
+    "backToTop": "Back to top"
+  },
+  "notFound": {
+    "text": "Page Not Found"
+  }
+}
